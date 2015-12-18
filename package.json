@@ -3,8 +3,9 @@
     "description": "Ero Martin Proj",
     "version": "0.0.2",
     "private": false,
-    "dependencies": {    	
+    "dependencies": {
         "express": "latest",
-        "mongodb": "latest"
+        "mongodb": "latest",
+        "phantomjs": "latest"        
     }
 }
