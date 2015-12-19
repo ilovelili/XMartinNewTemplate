@@ -12,9 +12,9 @@ var MongoClient = require('mongodb').MongoClient,
 var resloveDate = function(rawDate) {
     'use strict';
     var fragments = rawDate.split('-'),
-        year = fragments[2],
-        month = fragments[0] - 1, // month from 0 to 11
-        day = fragments[1];
+        year = fragments[0],
+        month = fragments[1] - 1, // month from 0 to 11
+        day = fragments[2];
 
     return new Date(year, month, day);
 };
