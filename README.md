@@ -1,3 +1,3 @@
 todo:
 
-* symlink nodejs-legacy => nodejs
+* check mongodb data from singaporehosting
