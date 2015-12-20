@@ -1,8 +1,8 @@
 var express = require('express'),
     path = require('path'),
     videos = require('./routes/videos'),
-    host = '127.0.0.1',
-    port = 3000;
+    host = process.env.HOST || '127.0.0.1',    
+    port = process.env.PORT || 3000;
 
 var app = express();
 // about body parser // http://code.runnable.com/U0sU598vXio2uD-1/example-reading-form-input-with-express-4-0-and-body-parser-for-node-js
@@ -24,10 +24,8 @@ app.use(function (req, res, next) {
 });
 
 app.get('/videos/:id', videos.findById);
-app.get('/videos/:cat', videos.findByCat);
-app.get('/videos/:name', videos.findByName);
+app.get('/videos/cat/:cat', videos.findByCat);
 app.get('/videos', videos.findAll);
 
-// change me when release
-app.listen(host, port);
-console.log('Listening on port 3000...');
+app.listen(port, host);
+console.log('Listening on {0}:{1}'.replace('{0}', host).replace('{1}', port));

@@ -1,3 +1,3 @@
 todo:
 
-* multi language (ngTranslate)
+* symlink nodejs-legacy => nodejs

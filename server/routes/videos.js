@@ -1,105 +1,66 @@
 /*
  * API layer
  */
-var mongodb = require('mongodb'),
-    MongoClient = mongodb.MongoClient,
-    Server = mongodb.Server,
-    host = process.env.Host || '127.0.0.1',
-    port = 27017,
-    mongoClient = new MongoClient(new Server(host, port), {
-        native_parser: true
-    }),
-    ObjectId = mongodb.ObjectID;
+var MongoClient = require('mongodb').MongoClient,    
+    host = process.env.MongoHost || '127.0.0.1',
+    port = process.env.MongoPort || 27017,
+    db = 'ero',
+    url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
+    ObjectId = require('mongodb').ObjectID;
 
-exports.findById = function (req, res) {
+exports.findById = function(req, res) {
     'use strict';
     var id = req.params.id;
     console.log('findById: ' + id);
-    mongoClient.open(function (err, mongoClient) {
+    MongoClient.connect(url, function(err, db) {
         if (!err) {
-            var db = mongoClient.db("ero");
-            db.collection('videos', function (err, collection) {
+            var col = db.collection('videos');
+            col.findOne({
+                _id: new ObjectId(id),
+                enabled: true
+            }, function(err, doc) {
                 if (!err) {
-                    collection.findOne({
-                        _id: new ObjectId(id),
-                        enabled: true
-                    }, function (err, item) {
-                        if (!err) {
-                            res.jsonp(item);
-                        }
-                        mongoClient.close();
-                    });
+                    res.jsonp(doc);
                 }
+                db.close();
             });
         }
     });
 };
 
-exports.findByName = function (req, res) {
-    'use strict';
-    var name = req.params.name;
-    console.log('findByName: ' + name);
-    mongoClient.open(function (err, mongoClient) {
-        if (!err) {
-            var db = mongoClient.db("ero");
-            db.collection('videos', function (err, collection) {
-                if (!err) {
-                    collection.findOne({
-                        name: name,
-                        enabled: true
-                    }, function (err, item) {
-                        if (!err) {
-                            res.jsonp(item);
-                        }
-                        mongoClient.close();
-                    });
-                }
-            });
-        }
-    });
-};
-
-exports.findByCat = function (req, res) {
+exports.findByCat = function(req, res) {
     'use strict';
     var cat = req.params.cat;
     console.log('findByCat: ' + cat);
-    mongoClient.open(function (err, mongoClient) {
+
+    MongoClient.connect(url, function(err, db) {
         if (!err) {
-            var db = mongoClient.db("ero");
-            db.collection('videos', function (err, collection) {
+            var col = db.collection('videos');
+            col.find({
+                category: cat,
+                enabled: true
+            }).toArray(function(err, docs) {
                 if (!err) {
-                    collection.findOne({
-                        cat: cat,
-                        enabled: true
-                    }, function (err, item) {
-                        if (!err) {
-                            res.jsonp(item);
-                        }
-                        mongoClient.close();
-                    });
+                    res.jsonp(docs);
                 }
+                db.close();
             });
         }
     });
 };
 
-exports.findAll = function (req, res) {
+exports.findAll = function(req, res) {
     'use strict';
-    mongoClient.open(function (err, mongoClient) {
+    MongoClient.connect(url, function(err, db) {
         if (!err) {
-            var db = mongoClient.db("ero");
-            db.collection('videos', function (err, collection) {
+            var col = db.collection('videos');
+            col.find({
+                enabled: true
+            }).toArray(function(err, docs) {
                 if (!err) {
-                    console.log(typeof(collection.find) === 'function');
-                    collection.find({
-                        enabled: true
-                    }).toArray(function (err, items) {
-                        if (!err) {
-                            res.jsonp(items);
-                        }
-                        mongoClient.close();
-                    });
+                    res.jsonp(docs);
                 }
+                db.close();
             });
         }
     });
