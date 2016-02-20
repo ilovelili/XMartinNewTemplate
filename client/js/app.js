@@ -14,7 +14,7 @@
         $routeProvider
             .when('/videos', {
                 templateUrl: 'partial/_list.html',
-                controller: 'VideoListCtrl'
+                // controller: 'VideoListCtrl'
             })
             .when('/videos/:id', {
                 templateUrl: 'partial/_detail.html'
