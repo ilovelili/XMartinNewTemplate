@@ -1,26 +1,193 @@
-<!--▽リード-->
-<div class="read_L">
-<!--<span translate="aside.nav.components.ui_kits.TIMELINE">Timeline</span>-->
-    <div class="read_TXT" translate="list.NEWVIDEOS">new videos</div>
-</div>
-<!--△リード-->
 <!--▼動画リスト-->
-<div class="contents_sec_1 cont_sections">
-
-	<!--Todo: ngRepeat-->
-	
-    <!--▼動画一覧BOX----------------------------->
-    <div class="MOV_thumb_box">
-        <div class="mov_thumb MOV_BOX_res">
-            <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
-            <!--△動画コード-->
+<div class="bs-docs-section">
+    <!--▽リード-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1 id="type" translate="list.POPULAR">人気無料エロ動画</h1>
+            </div>
         </div>
-        <!--タイトル&リンク ▶-->
-        <div class="mov_title"><a href="sample_movie_youtube.html">Youtube</a></div>
-        <!--◀ タイトル&リンク-->
     </div>
-    <!--▲動画一覧BOX----------------------------->
-    <div class="clear"></div>
+    <!--△リード-->
+
+    <!-- Headings -->
+    <!--▽AD-->
+    <!--<ad-spot></ad-spot>-->
+    <!--△AD-->
+
+    <!--▼人気動画一覧BOX----------------------------->
+    <div class="row">
+        <div class="col-sm-3" ng-repeat="video in videos | limitTo: 4">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <a ng-click="go('/videos/' + video._id)">
+                        <img ng-src="{{video.thumbnail}}" class="video-image">
+                        <p>{{video.title}}</p>
+                    </a>
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎるスレンダーJDと忘れられない記念ハメ撮り</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="bs-component">
+                <a href="/ranking.html" class="btn btn-default btn-block">人気動画一覧へ</a>
+            </div>
+        </div>
+    </div>
+    <!--▲人気動画一覧BOX----------------------------->
+
+    <!--▽リード-->
+    <div class="row margin-top_s">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h1 id="type" translate="list.NEWVIDEOS">新着無料エロ動画</h1>
+            </div>
+        </div>
+    </div>
+    <!--△リード-->
+    <!-- Headings -->
+
+    <!--▽AD-->
+    <!--<ad-spot></ad-spot>-->
+    <!--△AD-->
+
+    <!--▼新着動画一覧BOX----------------------------->
+    <div class="row content_list_more margin-top_s">
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎる</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎるスレンダーJDと忘れられない記念ハメ撮り。美人すぎるスレンダーJDと忘れられない記念ハメ撮り。</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span><span>巨乳</span><span>巨乳</span><span>巨乳</span><span>巨乳</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎるスレンダーJDと忘れられない記念ハメ撮り。美人すぎるスレンダーJDと忘れられない記念ハメ撮り。</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎるスレンダーJDと忘れられない記念ハメ撮り。① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ </a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="bs-component MOV_thumb_box">
+                <div class="mov_thumb">
+                    <!--▽動画コードここに記述（※コードのwidth（幅）やheight（縦）のサイズを書き換えず、そのままコードを貼り付ければOK）-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sq5QW3YqipM?controls=0&showinfo=0&autoplay=0&rel=0" frameborder="0" allowfullscreen></iframe>
+                    <!--△動画コード-->
+                </div>
+                <div class="MOV_BOX_res">
+                    <h2><a href="sample_movie_youtube.html">現役アイドル顔負けのカワイサ！ 美人すぎるスレンダーJDと忘れられない記念ハメ撮り。美人すぎるスレンダーJDと忘れられない記念ハメ撮り。</a></h2>
+                    <p class="keyword"><span>人妻</span><span>素人</span><span>巨乳</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="bs-component more_gdj">
+                <div class="adv">
+                    <!-- 広告は画面サイズでclassを切り替えている。classで実行されているのはdisplayをnone blockの違いだけ。 スマホad_1 タブレットad_768 ノートPC ad_992 デスクトップPC ad_1200 -->
+                    <a href="/" class="ad_1">
+                        <div class="centering"><img src="/img/test/ad_creative_300-250.gif" /></div>
+                    </a>
+                    <a href="#" class="ad_768"><img src="img/test/ad_creative_300-250.gif" alt="" /></a>
+                    <a href="#" class="ad_992"><img src="img/test/ad_creative_200-200.gif" alt="" /></a>
+                    <a href="#" class="ad_1200"><img src="img/test/ad_creative_300-250.gif" alt="" /></a>
+                </div>
+                <div class="">
+                    <a href="#" translate="list.MOREREAD" class="btn btn-primary btn-lg btn-block">もっと見る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="content">
+                <a href="#" translate="list.MOREREAD" class="btn btn-primary btn-lg btn-block">もっと見る</a>
+            </div>
+        </div>
+    </div>-->
+    <!--▲新着動画一覧BOX----------------------------->
+
+    <!-- Blockquotes -->
+
+    <!--<div class="row">
+        <div class="col-lg-12">
+            <h2 id="type-blockquotes">Blockquotes</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="bs-component">
+                <blockquote>
+                    <p>BootstrapはWebサイトやWebアプリケーションを作成するフリーソフトウェアツール集である。タイポグラフィ、フォーム、ボタン、ナビゲーション、その他構成要素やJavaScript用拡張などがHTML及びCSSベースのデザインテンプレートとして用意されている。</p>
+                    <small>出典 <cite title="Bootstrap - Wikipedia">Bootstrap - Wikipedia</cite></small>
+                </blockquote>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="bs-component">
+                <blockquote class="pull-right">
+                    <p>BootstrapはWebサイトやWebアプリケーションを作成するフリーソフトウェアツール集である。タイポグラフィ、フォーム、ボタン、ナビゲーション、その他構成要素やJavaScript用拡張などがHTML及びCSSベースのデザインテンプレートとして用意されている。</p>
+                    <small>出典 <cite title="Bootstrap - Wikipedia">Bootstrap - Wikipedia</cite></small>
+                </blockquote>
+            </div>
+        </div>
+    </div>-->
 </div>
+
 <!--▲動画リスト-->

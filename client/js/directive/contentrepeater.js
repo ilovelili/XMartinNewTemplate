@@ -2,12 +2,17 @@
     'use strict';
     angular.module('eroMartin.contentRepeaterDirective', []).directive('contentRepeater', ContentRepeaterDirectiveFunc);
 
-    // ContentRepeaterDirectiveFunc.$inject = ['$scope'];
+    ContentRepeaterDirectiveFunc.$inject = ['MongoService'];
 
-    function ContentRepeaterDirectiveFunc() {
+    function ContentRepeaterDirectiveFunc(MongoService) {
         return {
-        	restrict: 'E',
-        	templateUrl: 'partial/_contentrepeater.html'
+            restrict: 'E',
+            templateUrl: 'partial/_contentrepeater.html',
+            link: function(scope, elements, attributes) {
+                MongoService.getById().query().$promise.then(function(videos) {
+                    scope.videos = videos;
+                });
+            }
         };
     }
 })(window.angular);

@@ -14,7 +14,7 @@
         $routeProvider
             .when('/videos', {
                 templateUrl: 'partial/_list.html',
-                controller: 'VideoListCtrl'
+                // controller: 'VideoListCtrl'
             })
             .when('/videos/:id', {
                 templateUrl: 'partial/_detail.html'
@@ -34,9 +34,6 @@
     // translate config
     .config(['$translateProvider',
         function($translateProvider) {
-            // Register a loader for the static files
-            // So, the module will search missing translation tables under the specified urls.
-            // Those urls are [prefix][langKey][suffix].
             $translateProvider.useStaticFilesLoader({
                 prefix: 'l10n/',
                 suffix: '.js'
@@ -46,11 +43,10 @@
             $translateProvider.useSanitizeValueStrategy('sanitize');
 
             // Tell the module what language to use by default
-            $translateProvider.preferredLanguage('en');
+            $translateProvider.preferredLanguage('jp-JP');
 
             // Tell the module to store the language in the local storage
             $translateProvider.useLocalStorage();
         }
-    ])
-
+    ]);
 })(window.angular);
