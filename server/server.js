@@ -5,8 +5,6 @@ var express = require('express'),
     port = process.env.PORT || 3000;
 
 var app = express();
-// about body parser // http://code.runnable.com/U0sU598vXio2uD-1/example-reading-form-input-with-express-4-0-and-body-parser-for-node-js
-// app.use(express.bodyParser()); 
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.use(function (req, res, next) {
