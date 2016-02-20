@@ -3,8 +3,7 @@
     angular.module('eroMartin.directives', [
         'eroMartin.naviDirective',
         'eroMartin.sidemenuDirective',
-        'eroMartin.footerDirective',
-        'eroMartin.contentDirective',
+        'eroMartin.footerDirective',        
         'eroMartin.contentRepeaterDirective',
         'eroMartin.newcomingRepeaterDirective',
         'eroMartin.googleanalyticsDirective',

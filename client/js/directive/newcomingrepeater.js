@@ -8,6 +8,9 @@
         return {
             restrict: 'E',
             templateUrl: 'partial/_newcomingrepeater.html',
+            scope: {
+                limit: '='
+            },
             link: function(scope, elements, attributes) {
                 // todo: find by date
                 MongoService.getById().query().$promise.then(function(videos) {

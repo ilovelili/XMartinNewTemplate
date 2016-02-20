@@ -14,15 +14,15 @@
 <!--△AD-->
 <!--▼人気動画一覧BOX-->
 <div class="row">
-    <div class="col-sm-3" ng-repeat="video in videos | limitTo: 10">
+    <div class="col-sm-3" ng-repeat="video in videos | limitTo: limit">
         <div class="bs-component MOV_thumb_box">
             <div class="mov_thumb">
-                <a ng-click="go('/videos/' + video._id)">
+                <a ng-click="go('/video/' + video._id)">
                     <img ng-src="{{video.thumbnail}}" />
                 </a>
             </div>
             <div class="MOV_BOX_res">
-                <h2><a class="title" ng-click="go('/videos/' + video._id)">{{video.title}}</a></h2>
+                <h2><a class="title" ng-click="go('/video/' + video._id)">{{video.title}}</a></h2>
                 <p class="keyword"><span>{{video.category}}</span></p>
             </div>
         </div>
