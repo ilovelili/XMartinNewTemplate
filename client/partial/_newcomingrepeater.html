@@ -1,30 +1,50 @@
+<!--▼動画リスト-->
 <!--▽リード-->
-<div class="read_L">
-    <div class="read_TXT">新着コラム</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1 id="type" translate="list.NEWVIDEOS">新着無料エロ動画</h1>
+        </div>
+    </div>
 </div>
 <!--△リード-->
-<!--▼新着記事リスト-->
-<div class="contents_sec_2 cont_sections">
-    <!--todo: ngRepeat-->
-    <!--▼記事リスト----------------------------->
-    <div class="blog_list">
-        <!--サムネイル ▶-->
-        <div class="blog_list_thum"><img src="img/test/sample_01.png" alt="" /></div>
-        <!--◀ サムネイル-->
-        <div class="blog_list_TXTarea">
-            <!--タイトル ▶-->
-            <div class="blog_title title_link"><i class="fa fa-play-circle fontico_color"></i> <a href="sample_subpage.html">新着記事タイトル（News Title）</a></div>
-            <!--◀ タイトル-->
-            <!--日付 ▶-->
-            <div class="blog_date">2015.6.7 (Tue.）</div>
-            <!--◀ 日付-->
-            <!--▽テキスト（このテキストはスマホでの閲覧時は表示されません-->
-            <div class="blog_cont_TXT">ここのテキストはレスポンシブの関係上、スマホ閲覧時には表示されないように設定しています。PC・タブレットでの閲覧時には表示されます。上の記事タイトルと日付などは書き換えてください。</div>
-            <!--△テキスト-->
+<!-- Headings -->
+<!--▽AD-->
+<!--<ad-spot></ad-spot>-->
+<!--△AD-->
+<!--▼人気動画一覧BOX-->
+<div class="row">
+    <div class="col-sm-3" ng-repeat="video in videos | limitTo: 10">
+        <div class="bs-component MOV_thumb_box">
+            <div class="mov_thumb">
+                <a ng-click="go('/videos/' + video._id)">
+                    <img ng-src="{{video.thumbnail}}" />
+                </a>
+            </div>
+            <div class="MOV_BOX_res">
+                <h2><a class="title" ng-click="go('/videos/' + video._id)">{{video.title}}</a></h2>
+                <p class="keyword"><span>{{video.category}}</span></p>
+            </div>
         </div>
-        <div class="clear"></div>
-        <hr>
     </div>
-    <!--▲記事リスト----------------------------->
+
+    <!--todo: directive it-->
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="bs-component more_gdj">
+            <div class="adv">
+                <!-- 広告は画面サイズでclassを切り替えている。classで実行されているのはdisplayをnone blockの違いだけ。 スマホad_1 タブレットad_768 ノートPC ad_992 デスクトップPC ad_1200 -->
+                <a href="/" class="ad_1">
+                    <div class="centering"><img src="/img/test/ad_creative_300-250.gif" /></div>
+                </a>
+                <a href="#" class="ad_768"><img src="img/test/ad_creative_300-250.gif" alt="" /></a>
+                <a href="#" class="ad_992"><img src="img/test/ad_creative_200-200.gif" alt="" /></a>
+                <a href="#" class="ad_1200"><img src="img/test/ad_creative_300-250.gif" alt="" /></a>
+            </div>
+            <div class="">
+                <a href="#" translate="list.MOREREAD" class="btn btn-primary btn-lg btn-block">もっと見る</a>
+            </div>
+        </div>
+    </div>
 </div>
-<!--▲新着記事リスト-->
+<!--▲新着動画一覧BOX-->
+<!--▲動画リスト-->

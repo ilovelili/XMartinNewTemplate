@@ -49,6 +49,28 @@ exports.findByCat = function (req, res) {
     });
 };
 
+// todo: check query by date
+exports.findByDate = function (req, res) {
+    'use strict';
+    var date = req.params.date;
+    console.log('findByDate: ' + date);
+
+    MongoClient.connect(url, function (err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            col.find({
+                date: date,
+                enabled: true
+            }).toArray(function (err, docs) {
+                if (!err) {
+                    res.jsonp(docs);
+                }
+                db.close();
+            });
+        }
+    });
+};
+
 exports.findAll = function (req, res) {
     'use strict';
     MongoClient.connect(url, function (err, db) {

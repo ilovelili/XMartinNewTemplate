@@ -1,3 +1,1 @@
-todo:
-
-* check mongodb data from singaporehosting
+# Ero site use template provided by yagi

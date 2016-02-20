@@ -3,26 +3,36 @@
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="">
+<html class="" ng-app="eroMartin">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 
+<!--[if lt IE 9]>
+  <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Erohotel</title>
-    <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+    <title translate="title">エロホテルにようこそ</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <!--<link href="css/boilerplate.css" rel="stylesheet" type="text/css">-->
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!--▽ Sメニュー-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="lib/sidr/jquery.sidr.min.js"></script>
     <link href="lib/sidr/jquery.sidr.dark.css" rel="stylesheet" type="text/css">
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/run.js"></script>
     <!--△ Sメニュー-->
     <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,21 +50,19 @@
     <script type="text/javascript" src="lib/angular-translate-storage-local.min.js"></script>
     <script type="text/javascript" src="lib/angular-translate-storage-cookie.min.js"></script>
     <script type="text/javascript" src="lib/angular-translate-loader-static-files.min.js"></script>
-    
+
     <!--controller-->
     <!--<script type="text/javascript" src="js/controller/listcontroller.js"></script>-->
     <script type="text/javascript" src="js/controller/controller.js"></script>
 
     <!--directive-->
-    <script type="text/javascript" src="js/directive/pagetop.js"></script>
     <script type="text/javascript" src="js/directive/navi.js"></script>
-    <script type="text/javascript" src="js/directive/headerarea.js"></script>
-    <script type="text/javascript" src="js/directive/headerunder.js"></script>    
-    <script type="text/javascript" src="js/directive/sidemenu.js"></script>    
-    <script type="text/javascript" src="js/directive/footer.js"></script> 
-    <script type="text/javascript" src="js/directive/content.js"></script> 
-    <script type="text/javascript" src="js/directive/contentrepeater.js"></script> 
-    <script type="text/javascript" src="js/directive/newcomingrepeater.js"></script> 
+    <script type="text/javascript" src="js/directive/sidemenu.js"></script>
+    <script type="text/javascript" src="js/directive/footer.js"></script>
+    <script type="text/javascript" src="js/directive/content.js"></script>
+    <script type="text/javascript" src="js/directive/contentrepeater.js"></script>
+    <script type="text/javascript" src="js/directive/newcomingrepeater.js"></script>
+    <script type="text/javascript" src="js/directive/adspot.js"></script>
     <script type="text/javascript" src="js/directive/googleanalytics.js"></script>
     <script type="text/javascript" src="js/directive/directive.js"></script>
 
@@ -64,9 +72,10 @@
 
     <!--app-->
     <script type="text/javascript" src="js/app.js"></script>
+    <!--boot-->
 </head>
 
-<body ng-app="eroMartin">
+<body>
     <div ng-view></div>
 </body>
 

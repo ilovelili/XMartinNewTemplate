@@ -23,6 +23,7 @@ app.use(function (req, res, next) {
 
 app.get('/videos/:id', videos.findById);
 app.get('/videos/cat/:cat', videos.findByCat);
+app.get('/videos/date/:date', videos.findByDate);
 app.get('/videos', videos.findAll);
 
 app.listen(port, host);
