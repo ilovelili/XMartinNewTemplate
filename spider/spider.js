@@ -4,7 +4,7 @@ var links = [],
     fs = require('fs'),
     casper = require('casper').create({
         verbose: true,
-        logLevel: 'error',
+        logLevel: 'debug',
         pageSettings: {
             loadImages: false,
             loadPlugins: false
