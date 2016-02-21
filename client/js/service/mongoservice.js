@@ -5,13 +5,10 @@
             function($resource) {
                 return {
                     getById: function() {
-                        return $resource('http://127.0.0.1:3000/videos/:id', {});
+                        return $resource('http://188.166.244.244:3000/videos/:id', {});
                     },
                     getByCat: function() {
-                        return $resource('http://127.0.0.1:3000/videos/cat/:cat', {});
-                    },
-                    getByDate: function() {
-                        return $resource('http://127.0.0.1:3000/videos/date/:date', {});
+                        return $resource('http://188.166.244.244:3000/videos/cat/:cat', {});
                     }
                 };
             }

@@ -1,7 +1,7 @@
 var express = require('express'),
     path = require('path'),
     videos = require('./routes/videos'),
-    host = process.env.HOST || '127.0.0.1',    
+    host = process.env.HOST || '188.166.244.244',    
     port = process.env.PORT || 3000;
 
 var app = express();
@@ -23,7 +23,7 @@ app.use(function (req, res, next) {
 
 app.get('/videos/:id', videos.findById);
 app.get('/videos/cat/:cat', videos.findByCat);
-app.get('/videos/date/:date', videos.findByDate);
+// app.get('/videos/date/:date', videos.findByDate);
 app.get('/videos', videos.findAll);
 
 app.listen(port, host);
