@@ -24,7 +24,7 @@
             <div class="MOV_BOX_res">
                 <h2><a class="title" ng-click="go('/video/' + video._id)">{{video.title}}</a></h2>
                 <p class="keyword">
-                    <span ng-repeat="cat in video.categories track by $index">
+                    <span ng-repeat="cat in video.categories track by $index" ng-if="cat">
                         <a ng-click="go('/keyword/' + decodeURIComponent(cat))" class="accent-color">{{cat}}</a>
                     </span>
                 </p>
