@@ -14,7 +14,7 @@
 <!--△AD-->
 <!--▼人気動画一覧BOX-->
 <div class="row">
-    <div class="col-sm-3" ng-repeat="video in videos | limitTo: limit">
+    <div class="col-sm-3" ng-repeat="video in videos | limitTo: 4">
         <div class="bs-component MOV_thumb_box">
             <div class="mov_thumb">
                 <a ng-click="go('/video/' + video._id)">
@@ -23,7 +23,11 @@
             </div>
             <div class="MOV_BOX_res">
                 <h2><a class="title" ng-click="go('/video/' + video._id)">{{video.title}}</a></h2>
-                <p class="keyword"><span>{{video.category}}</span></p>
+                <p class="keyword">
+                    <span ng-repeat="cat in video.categories track by $index">
+                        <a ng-click="go('/keyword/' + decodeURIComponent(cat))" class="accent-color">{{cat}}</a>
+                    </span>
+                </p>
             </div>
         </div>
     </div>

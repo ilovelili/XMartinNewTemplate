@@ -2,7 +2,7 @@
  * API layer
  */
 var MongoClient = require('mongodb').MongoClient,    
-    host = process.env.MongoHost || '45.55.130.170',
+    host = process.env.MongoHost || '188.166.244.244',
     port = process.env.MongoPort || 27017,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),

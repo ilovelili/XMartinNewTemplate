@@ -2,6 +2,8 @@
 
 a { cursor: pointer; }
 
+.accent-color { color: rgb(51, 51, 51); }
+
 /* Mobile Layout: 480px and below. */
 
 .ad_1 {

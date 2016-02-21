@@ -8,11 +8,13 @@
         return {
             restrict: 'E',
             templateUrl: 'partial/_contentrepeater.html',
-            scope: {
-                limit: '='
-            },
+            
             link: function(scope, elements, attributes) {
                 MongoService.getById().query().$promise.then(function(videos) {
+                    videos.map(function(video) {
+                        video.categories = video.category.split(' ');
+                    });
+
                     scope.videos = videos;
                 });
             }

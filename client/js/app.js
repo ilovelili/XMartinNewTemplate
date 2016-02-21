@@ -13,13 +13,15 @@
         ]).config(['$routeProvider', function($routeProvider) {
             $routeProvider
                 .when('/home', {
-                    templateUrl: 'partial/_home.html',
-                    controller: 'MainCtrl'
-                })                
+                    templateUrl: 'partial/_home.html'
+                })
                 .when('/ranking', {
                     templateUrl: 'partial/_ranking.html'
                 })
                 .when('/keyword', {
+                    templateUrl: 'partial/_keyword.html'
+                })
+                .when('/keyword/:cat', {
                     templateUrl: 'partial/_keyword.html'
                 })
                 .when('/video/:id', {
@@ -47,5 +49,14 @@
                 // Tell the module to store the language in the local storage
                 $translateProvider.useLocalStorage();
             }
-        ]);
+        ])
+        // rootscope register
+        .run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
+            $rootScope.back = function() {
+                $window.history.back();
+            };
+            $rootScope.go = function(path) {
+                $location.url(path);
+            };
+        }]);
 })(window.angular);
