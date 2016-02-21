@@ -26,7 +26,7 @@ function getThumbnailInfo() {
     console.log('thumbnail length: ' + thumbnails.length);
 
     return Array.prototype.map.call(thumbnails, function(thumbnail) {
-        var category = $(thumbnail).find('.caption .tags').text().replace(/\s/g, '');
+        var category = $(thumbnail).find('.caption .tags').text().trim();
 
         var info = $(thumbnail).children('a'),
             link = 'http://j-xvideos.com' + info.attr('href'),
@@ -48,7 +48,7 @@ casper.saveToCSV = function() {
     'use strict';
     var result = '',
         source = [];
-        
+
     Array.prototype.map.call(infos, function(info, index) {
         if (info) {
             source.push(info + ',' + links[index].category + ',' + links[index].link + ',' + links[index].thumbnail + ',' + links[index].description + ',' + links[index].duration + ',' + filename.split('.csv')[0]);

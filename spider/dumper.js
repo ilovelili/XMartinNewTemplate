@@ -38,6 +38,7 @@ var readFile = function() {
                 title = fragment[4],
                 duration = fragment[5],
                 date = resloveDate(fragment[6]),
+                click = 0,
                 enabled = true;
 
             result.push({
@@ -47,6 +48,7 @@ var readFile = function() {
                 "category": category,
                 "duration": duration,
                 "date": date,
+                "click": click,
                 "enabled": enabled
             });
         }
