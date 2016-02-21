@@ -1,8 +1,8 @@
 (function(angular) {
     'use strict';
-    angular.module('eroMartin.adspotDirective', []).directive('adSpot', AdSpot);
+    angular.module('eroMartin.adspotDirective', []).directive('adSpot', AdSpotFunc);
 
-    function AdSpot() {
+    function AdSpotFunc() {
         return {
         	restrict: 'E',
         	templateUrl: 'partial/_adspot.html'

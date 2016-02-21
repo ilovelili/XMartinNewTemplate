@@ -7,6 +7,7 @@
         'eroMartin.contentRepeaterDirective',
         'eroMartin.newcomingRepeaterDirective',
         'eroMartin.googleanalyticsDirective',
-        'eroMartin.adspotDirective'
+        'eroMartin.adspotDirective',
+        'eroMartin.nativeAdSpotDirective'
     ]);
 })(window.angular);
