@@ -304,8 +304,9 @@ video {
     height: auto;
 }
 
-
-
+.read_TXT {
+    margin: 0 2.5%;        
+}
 
 /* Tablet Layout: 768px to 992px. Inherits styles from: Mobile Layout. */
 
@@ -438,7 +439,7 @@ video {
     .read_L {}
     .read_S {}
     .read_TXT {
-        padding: 0 1.5%;
+        padding: 0 1.5%;        
     }
     .read_L,
     .read_S {}
