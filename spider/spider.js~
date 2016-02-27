@@ -14,7 +14,7 @@ var links = [],
     destination = options.dest || 'j-xvideos',
     config = require('config.json')[destination],
     filename = (options.name === undefined ?
-        new Date().toISOString().split('T')[0] + '.csv' :
+        new Date().toLocaleDateString().replace(/\//g, '-').replace('年', '-').replace('月', '-').replace('日', '') + '.csv' :
         options.name + '.csv');
 
 // when run by batch

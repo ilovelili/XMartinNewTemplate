@@ -22,7 +22,7 @@ var resloveDate = function(rawDate) {
 var readFile = function() {
     'use strict';
     // todo: change me when run cron
-    var dir = './output/',
+    var dir = '/home/min/Projects/xmartin/spider/output/',
         files = fs.readdirSync(dir),
         data = [];
     for (var index in files) {

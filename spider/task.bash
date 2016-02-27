@@ -1,3 +1,3 @@
 #!/bin/bash
-casperjs spider.js
-node dumper.js
+casperjs /home/min/Projects/xmartin/spider/spider.js
+nodejs /home/min/Projects/xmartin/spider/dumper.js
