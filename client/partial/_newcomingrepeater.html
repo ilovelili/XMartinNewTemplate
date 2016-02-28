@@ -14,7 +14,7 @@
 <!--△AD-->
 <!--▼人気動画一覧BOX-->
 <div class="row">
-    <div class="col-sm-3" ng-repeat="video in videos | limitTo: 10">
+    <div class="col-sm-3" ng-repeat="video in videos | limitTo: limit">
         <div class="bs-component MOV_thumb_box">
             <div class="mov_thumb">
                 <a ng-click="go('/video/' + video._id)">

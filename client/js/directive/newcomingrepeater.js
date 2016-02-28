@@ -18,6 +18,13 @@
                     scope.videos = videos.sort(function(video1, video2) {
                         return new Date(video1.date).getTime() > new Date(video2.date).getTime();
                     });
+
+                    // init
+                    scope.limit = 10;
+
+                    scope.extendLimit = function() {
+                        scope.limit += 10;
+                    };
                 });
             }
         };
