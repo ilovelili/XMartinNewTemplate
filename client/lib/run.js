@@ -2,7 +2,7 @@ $('.bs-component [data-toggle="popover"]').popover();
 $('.bs-component [data-toggle="tooltip"]').tooltip();
 
 // hack, delete me later
-var seed,
+/*var seed,
     hackStyle = function() {
     	// begin hack
     	if($('.title.ng-binding').length) {
@@ -13,7 +13,7 @@ var seed,
     	}
     };
 
-seed = window.setInterval(hackStyle, 300);
+seed = window.setInterval(hackStyle, 300);*/
 
 window.onload = function () {
     // ランキングswitch
