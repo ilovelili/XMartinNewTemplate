@@ -6,12 +6,8 @@
         return {
         	restrict: 'E',
         	templateUrl: 'partial/_nativeadspot.html',
-        	scope: {
-        		videos: '='
-        	},
-        	link: function(scope, elements, attributes) {
-        		// watch more
-        	}
+        	// use parent scope
+            scope: false
         };
     }
 })(window.angular);
