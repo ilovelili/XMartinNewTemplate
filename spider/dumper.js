@@ -58,6 +58,22 @@ var readFile = function() {
     return result;
 };
 
+var unlinkFiles = function(){
+    // todo: change me when run cron
+    var dir = '/home/min/Projects/xmartin/spider/output/',
+        files = fs.readdirSync(dir);
+        
+    for (var index in files) {
+        fs.unlink((dir + files[index]), function(err){
+            if(err) {
+                console.error(err);
+            } else {
+                console.log(files[index] + ' unlinked');
+            }            
+        });
+    }
+};
+
 // dump
 dataToBeDumped = readFile();
 MongoClient.connect(url, function(err, db) {
@@ -68,6 +84,8 @@ MongoClient.connect(url, function(err, db) {
                 console.error(err);
             }
             db.close();
+            // delete file anyway
+            unlinkFiles();
         });
     }
 });
