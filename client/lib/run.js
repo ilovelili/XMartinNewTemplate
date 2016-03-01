@@ -14,3 +14,22 @@ var seed,
     };
 
 seed = window.setInterval(hackStyle, 300);
+
+window.onload = function () {
+    // ランキングswitch
+    $(".ranking_switch_tab_week").click(function () {
+        $(":root").find(".ranking_switch_week").show();
+        $(":root").find(".ranking_switch_month").hide();
+        $(":root").find(".ranking_switch_fulltime").hide();
+    });
+    $(".ranking_switch_tab_month").click(function () {
+        $(":root").find(".ranking_switch_week").hide();
+        $(":root").find(".ranking_switch_month").show();
+        $(":root").find(".ranking_switch_fulltime").hide();
+    });
+    $(".ranking_switch_tab_fulltime").click(function () {
+        $(":root").find(".ranking_switch_week").hide();
+        $(":root").find(".ranking_switch_month").hide();
+        $(":root").find(".ranking_switch_fulltime").show();
+    });
+};
