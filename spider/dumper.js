@@ -7,7 +7,9 @@ var MongoClient = require('mongodb').MongoClient,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
     fs = require('fs'),
-    dataToBeDumped;
+    dataToBeDumped,
+    // todo: change me when run cron
+    dir = '/home/min/Projects/xmartin/spider/output/';
 
 var resloveDate = function(rawDate) {
     'use strict';
@@ -21,9 +23,8 @@ var resloveDate = function(rawDate) {
 
 var readFile = function() {
     'use strict';
-    // todo: change me when run cron
-    var dir = '/home/min/Projects/xmartin/spider/output/',
-        files = fs.readdirSync(dir),
+    
+    var files = fs.readdirSync(dir),
         data = [];
     for (var index in files) {
         data = data.concat((fs.readFileSync(dir + files[index], 'utf-8')).split('\r\n'));
@@ -58,10 +59,8 @@ var readFile = function() {
     return result;
 };
 
-var unlinkFiles = function(){
-    // todo: change me when run cron
-    var dir = '/home/min/Projects/xmartin/spider/output/',
-        files = fs.readdirSync(dir);
+var unlinkFiles = function(){    
+    var files = fs.readdirSync(dir);
         
     for (var index in files) {
         fs.unlink((dir + files[index]), function(err){
