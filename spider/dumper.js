@@ -6,10 +6,10 @@ var MongoClient = require('mongodb').MongoClient,
     port = process.env.PORT || 27017,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
-    fs = require('fs'),
-    dataToBeDumped,
-    // todo: change me when run cron
-    dir = '/home/min/Projects/xmartin/spider/output/';
+    fs = require('fs'),    
+    path = require('path'),
+    dataToBeDumped,        
+    dir = path.join(process.cwd(), 'output/');
 
 var resloveDate = function(rawDate) {
     'use strict';

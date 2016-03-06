@@ -63,6 +63,7 @@ casper.saveToCSV = function() {
             result += line + (index === source.length - 1 ? '' : '\r\n');
     }
     if (result.length > 0) {
+        // workingDirectory is defined by phantomjs, use process.cwd() in nodejs
         fs.write(fs.pathJoin(fs.workingDirectory, 'output', filename), result, 'w');
     }
 };
