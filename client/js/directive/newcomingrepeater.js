@@ -8,9 +8,9 @@
         return {
             restrict: 'E',
             templateUrl: 'partial/_newcomingrepeater.html',
-            
+            // or directive controller?
             link: function(scope, elements, attributes) {
-                MongoService.getById().query().$promise.then(function(videos) {
+                MongoService.getById().then(function(videos) {
                     videos.map(function(video) {
                         video.categories = video.category.split(' ');
                     });

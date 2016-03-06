@@ -1,1 +1,43 @@
-<h2>detail</h2>
+<div id="head_under" class="gridContainer clearfix">
+    <!--▼メインセクション-->
+    <div class="main_section">
+        <!--▽リード-->
+        <div class="row margin-top_s">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h1 id="type">{{video.title}}</h1>
+                </div>
+            </div>
+        </div>
+        <!--△リード-->
+        <!-- Headings -->
+        <!--▼新着動画一覧BOX-->
+        <div class="row content_list_more margin-top_s">
+            <div class="col-lg-12 padding-top_s padding-bottom_s video_wrapper">
+                <div class="video" ng-bind-html="trustedLink"></div>
+                <div class="MOV_BOX_res">
+                    <p class="keyword">
+                        <span ng-repeat="cat in video.categories track by $index" ng-if="cat">
+                        	<a ng-click="go('/keyword/' + decodeURIComponent(cat))">{{cat}}</a>
+                    	</span></p>
+                    <span class="time">{{video.duration}}</span>
+                </div>
+            </div>
+        </div>
+        <!--▲新着動画一覧BOX-->
+
+
+        <!--todo: find by cat panel-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bs-component">
+                    <a ng-click="go('/popular')" class="btn btn-default btn-block" translate="navi.POPULAR">人気動画一覧へ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--▲メインセクション-->
+    <side-menu></side-menu>
+    <!--▲サイドメニュー-->
+    <div class="clear" style="height:50px;"></div>
+</div>

@@ -25,8 +25,8 @@
                     templateUrl: 'partial/_keyword.html'
                 })
                 .when('/video/:id', {
-                    templateUrl: 'partial/_detail.html'
-                        //controller: 'VideoDetailCtrl'
+                    templateUrl: 'partial/_detail.html',
+                    controller: 'VideoDetailCtrl'
                 })
                 .otherwise({
                     redirectTo: '/home'
