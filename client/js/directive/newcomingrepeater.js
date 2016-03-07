@@ -13,6 +13,12 @@
                 MongoService.getById().then(function(videos) {
                     videos.map(function(video) {
                         video.categories = video.category.split(' ');
+                        
+                        // stupid hack
+                        if (video.title.length > 24)
+                            angular.extend(video, {
+                                title: video.title.substring(0, 24) + '...'
+                            });
                     });
                     // sort by date to make sure the latest will be shown                   
                     scope.videos = videos.sort(function(video1, video2) {

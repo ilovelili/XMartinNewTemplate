@@ -242,6 +242,7 @@ a {
 
 /* 共通
 ----------------------------------------------------------*/
+
 .mov_thumb {
     position: relative;
     padding-bottom: 56.25%;
@@ -316,6 +317,18 @@ a {
     margin-right: auto;
 }
 
+
+/*kyo hack
+----------------------------------------------------------*/
+
+.title {
+    font-size: 0.7em;
+}
+
 .video {
     text-align: center;
+}
+
+.MOV_BOX_res h2 {
+    min-height: 5em;
 }
