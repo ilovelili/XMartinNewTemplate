@@ -8,7 +8,10 @@
         MongoService.getById($routeParams.id).then(function(video) {
             video.categories = video.category.split(' ');
             $scope.video = video;
-            $scope.trustedLink = $sce.trustAsHtml(video.link);            
+            // very ugly iframe responsive hack
+            var width = Math.min($(document.body).width(), 728);
+            video.link = video.link.replace('{{width}}', width).replace('{{height}}', width / 728 * 500);
+            $scope.trustedLink = $sce.trustAsHtml(video.link);
         });
     }
 })(window.angular);

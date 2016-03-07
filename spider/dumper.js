@@ -33,7 +33,7 @@ var readFile = function() {
     Array.prototype.map.call(data, function(record) {
         if (record.length) {
             var fragment = record.split(','),
-                link = "<iframe src='" + fragment[0] + "' frameborder=0 width=728 height=500 scrolling=no></iframe>",
+                link = "<iframe src='" + fragment[0] + "' frameborder=0 width={{width}} height={{height}} scrolling=no></iframe>",
                 category = fragment[1],
                 thumbnail = fragment[3],
                 title = fragment[4],
