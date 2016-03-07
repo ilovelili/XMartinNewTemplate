@@ -29,10 +29,18 @@ a {
     display: none;
 }
 
+/*kyo hack*/
+.title {
+    font-size: 0.7em;
+}
 
 /* Tablet Layout: 768px to 992px. Inherits styles from: Mobile Layout. */
 
 @media ( min-width: 768px) {
+    .title {
+        font-size: 1em;
+    }
+
     #banner {
         min-height: 300px;
         border-bottom: none;
@@ -101,6 +109,9 @@ a {
 /* Desktop Layout: 992px to a max of 1200px.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media ( min-width: 992px) {
+    .title {
+        font-size: 1em;
+    }
     #banner {
         min-height: 300px;
         border-bottom: none;
@@ -175,6 +186,9 @@ a {
 /* Desktop Layout: 1200px to a max.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media ( min-width: 1200px) {
+    .title {
+        font-size: 1em;
+    }
     #banner {
         min-height: 300px;
         border-bottom: none;
@@ -320,7 +334,6 @@ a {
 
 /*kyo hack
 ----------------------------------------------------------*/
-
 .video {
     text-align: center;
 }
