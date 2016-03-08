@@ -1,5 +1,5 @@
 {
-	"title": "エロホテルにようこそ",
+	"title": "エロホテルへようこそ",
 	"list": {
 		"POPULAR": "人気無料XVIDEOSエロ動画",
 		"NEWVIDEOS": "新着無料XVIDEOSエロ動画",
@@ -12,5 +12,9 @@
 		"KEYWORD": "キーワード",
 		"POPULAR": "人気動画一覧へ",
 		"NEWVIDEOS": "新着動画一覧へ"
+	},
+	"detail": {
+		"DURATION": "再生時間",
+		"UPDATETIME": "更新時刻"
 	}
 }

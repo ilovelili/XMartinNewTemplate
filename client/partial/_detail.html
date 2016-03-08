@@ -20,7 +20,8 @@
                         <span ng-repeat="cat in video.category track by $index" ng-if="cat">
                         	<a ng-click="go('/keyword/' + decodeURIComponent(cat))">{{cat}}</a>
                     	</span></p>
-                    <span class="time">{{video.duration}}</span>
+                    <span class="time"><span translate="detail.DURATION">再生時間</span>: {{video.duration}}</span><br />
+                    <span class="date"><span translate="detail.UPDATETIME">更新時刻</span>: {{video.date}}</span>
                 </div>
             </div>
         </div>

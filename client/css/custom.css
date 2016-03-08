@@ -288,6 +288,19 @@ a {
     opacity: 0.7;
 }
 
+.MOV_BOX_res .date {
+    font-size: 0.7em;
+}
+
+.MOV_BOX_res .listdate {
+    font-size: 0.7em;
+}
+
+.MOV_BOX_res .listdate > span {
+    padding: 0.05em 0.3em 0.1em;
+    margin: 0 0.3em;
+}
+
 .MOV_BOX_res .keyword {
     display: block;
     height: 2.9em;

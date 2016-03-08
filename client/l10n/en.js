@@ -12,5 +12,9 @@
 		"KEYWORD": "Keywords",
 		"POPULAR": "More poplular videos",
 		"NEWVIDEOS": "More latest videos"
+	},	
+	"detail": {
+		"DURATION": "Duration",
+		"UPDATETIME": "Updated time"
 	}
 }

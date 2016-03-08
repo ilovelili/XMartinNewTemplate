@@ -2,9 +2,9 @@
     'use strict';
     angular.module('eroMartin.contentRepeaterDirective', []).directive('contentRepeater', ContentRepeaterDirectiveFunc);
 
-    ContentRepeaterDirectiveFunc.$inject = ['MongoService'];
+    ContentRepeaterDirectiveFunc.$inject = ['MongoService', 'dateService'];
 
-    function ContentRepeaterDirectiveFunc(MongoService) {
+    function ContentRepeaterDirectiveFunc(MongoService, dateService) {
         return {
             restrict: 'E',
             templateUrl: 'partial/_contentrepeater.html',

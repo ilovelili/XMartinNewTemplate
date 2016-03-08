@@ -28,6 +28,9 @@
                     <span ng-repeat="cat in video.category track by $index" ng-if="cat">
                         <a ng-click="go('/keyword/' + decodeURIComponent(cat))" class="accent-color">{{cat}}</a>
                     </span>
+                </p>                
+                <p class="listdate">
+                    <span>{{video.date}}</span>
                 </p>
             </div>
         </div>

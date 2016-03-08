@@ -57,6 +57,6 @@
             };
             $rootScope.go = function(path) {
                 $location.url(path);
-            };
+            };            
         }]);
 })(window.angular);
