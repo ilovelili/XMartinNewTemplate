@@ -5,8 +5,7 @@
     VideoDetailCtrl.$inject = ['$scope', '$routeParams', '$sce', 'MongoService'];
 
     function VideoDetailCtrl($scope, $routeParams, $sce, MongoService) {
-        MongoService.getById($routeParams.id).then(function(video) {
-            video.categories = video.category.split(' ');
+        MongoService.getById($routeParams.id).then(function(video) {            
             $scope.video = video;
             // very ugly iframe responsive hack
             var width = Math.min($(document.body).width(), 728);

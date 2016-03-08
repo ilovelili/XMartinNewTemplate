@@ -17,7 +17,7 @@
                 <div class="video" ng-bind-html="trustedLink"></div>
                 <div class="MOV_BOX_res">
                     <p class="keyword">
-                        <span ng-repeat="cat in video.categories track by $index" ng-if="cat">
+                        <span ng-repeat="cat in video.category track by $index" ng-if="cat">
                         	<a ng-click="go('/keyword/' + decodeURIComponent(cat))">{{cat}}</a>
                     	</span></p>
                     <span class="time">{{video.duration}}</span>
