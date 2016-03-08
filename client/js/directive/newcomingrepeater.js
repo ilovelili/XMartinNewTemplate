@@ -12,8 +12,6 @@
             link: function(scope, elements, attributes) {
                 MongoService.getById().then(function(videos) {
                     videos.map(function(video) {
-                        video.categories = video.category.split(' ');
-                        
                         // stupid hack
                         if (video.title.length > 24)
                             angular.extend(video, {

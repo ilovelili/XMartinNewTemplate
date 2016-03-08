@@ -6,9 +6,9 @@ var MongoClient = require('mongodb').MongoClient,
     port = process.env.PORT || 27017,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
-    fs = require('fs'),    
+    fs = require('fs'),
     path = require('path'),
-    dataToBeDumped,        
+    dataToBeDumped,
     dir = path.join(process.cwd(), 'output/');
 
 var resloveDate = function(rawDate) {
@@ -21,9 +21,24 @@ var resloveDate = function(rawDate) {
     return new Date(year, month, day);
 };
 
+var resloveCats = function(rawCats) {
+    debugger;
+    console.log('rawCats:' + rawCats);
+
+    return rawCats
+        // replace '\n' in raw data
+        .replace('\n', '')
+        // convert to array
+        .split(' ')
+        // filter empty
+        .filter(function(cat) {
+            return cat.length != 0;
+        })
+};
+
 var readFile = function() {
     'use strict';
-    
+
     var files = fs.readdirSync(dir),
         data = [];
     for (var index in files) {
@@ -34,11 +49,11 @@ var readFile = function() {
         if (record.length) {
             var fragment = record.split(','),
                 link = "<iframe src='" + fragment[0] + "' frameborder=0 width={{width}} height={{height}} scrolling=no></iframe>",
-                category = fragment[1],
+                category = resloveCats(fragment[1]),
                 thumbnail = fragment[3],
                 title = fragment[4],
                 duration = fragment[5],
-                date = resloveDate(fragment[6]),
+                date = new Date(),
                 click = 0,
                 enabled = true;
 
@@ -59,16 +74,16 @@ var readFile = function() {
     return result;
 };
 
-var unlinkFiles = function(){    
+var unlinkFiles = function() {
     var files = fs.readdirSync(dir);
-        
+
     for (var index in files) {
-        fs.unlink((dir + files[index]), function(err){
-            if(err) {
+        fs.unlink((dir + files[index]), function(err) {
+            if (err) {
                 console.error(err);
             } else {
                 console.log(files[index] + ' unlinked');
-            }            
+            }
         });
     }
 };
@@ -84,7 +99,7 @@ MongoClient.connect(url, function(err, db) {
             }
             db.close();
             // delete file anyway
-            unlinkFiles();
+            // unlinkFiles();
         });
     }
 });

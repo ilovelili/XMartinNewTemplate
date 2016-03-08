@@ -51,7 +51,7 @@ casper.saveToCSV = function() {
 
     Array.prototype.map.call(infos, function(info, index) {
         if (info) {
-            source.push(info + ',' + links[index].category + ',' + links[index].link + ',' + links[index].thumbnail + ',' + links[index].description + ',' + links[index].duration + ',' + filename.split('.csv')[0]);
+            source.push(info + ',' + links[index].category + ',' + links[index].link + ',' + links[index].thumbnail + ',' + links[index].description + ',' + links[index].duration);
         }
     });
 
