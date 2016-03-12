@@ -14,13 +14,13 @@
                     return [
                         date.getFullYear(),
                         (date.getMonth() + 1).padLeft(),
-                        date.getDate().padLeft()                        
+                        date.getDate().padLeft()
                     ].join('-') + ' ' + [
                         date.getHours().padLeft(),
                         date.getMinutes().padLeft(),
                         date.getSeconds().padLeft()
                     ].join(':');
-                }
+                },
             };
         });
 })(window.angular);

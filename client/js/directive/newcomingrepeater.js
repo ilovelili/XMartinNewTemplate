@@ -22,10 +22,6 @@
                                 title: video.title.substring(0, 24) + '...'
                             });
                     });
-                    // sort by date to make sure the latest will be shown                   
-                    scope.videos = videos.sort(function(video1, video2) {
-                        return new Date(video1.date).getTime() < new Date(video2.date).getTime();
-                    });
 
                     // init
                     scope.limit = 10;
