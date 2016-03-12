@@ -57,6 +57,14 @@
             };
             $rootScope.go = function(path) {
                 $location.url(path);
-            };            
+            };
+
+            $rootScope.$on('$routeChangeSuccess', function(newVal, oldVal) {
+                // init navi bar
+                var navi = $('.navbar-toggle');
+                if(navi.attr('aria-expanded') === 'true') {
+                    navi.click();
+                }
+            });
         }]);
 })(window.angular);
