@@ -23,6 +23,7 @@
                             });
                     });
 
+                    scope.videos = videos;
                     // init
                     scope.limit = 10;
                     scope.extendLimit = function(event) {
