@@ -17,7 +17,9 @@ embed,
 video {
     max-width: 100%;
 }
-
+* a{
+	cursor:pointer;
+}
 
 /* IE 6 does not support max-width so default to width 100% */
 
@@ -27,18 +29,18 @@ video {
 
 
 /*
-    Dreamweaver Fluid Grid Properties
-    ----------------------------------
-    dw-num-cols-mobile:     4;
-    dw-num-cols-tablet:     8;
-    dw-num-cols-desktop:    12;
-    dw-gutter-percentage:   25;
-    
-    Inspiration from "Responsive Web Design" by Ethan Marcotte 
-    http://www.alistapart.com/articles/responsive-web-design
-    
-    and Golden Grid System by Joni Korpi
-    http://goldengridsystem.com/
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		4;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	12;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
 */
 
 .fluid {
@@ -55,6 +57,7 @@ video {
     margin: 0;
     padding: 0;
 }
+
 
 
 /* Mobile Layout: 480px and below. */
@@ -74,6 +77,7 @@ video {
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
 }
+
 
 
 /* トップエリア
@@ -127,6 +131,7 @@ video {
 }
 
 
+
 /* ヘッダーエリア
 ------------------------------------------*/
 
@@ -174,8 +179,7 @@ video {
 .MOV_thumb_box {
     float: left;
     width: 43.4%;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-right: 4%;
     margin-bottom: 2%;
 }
 
@@ -261,7 +265,6 @@ video {
     padding: 3% 0 2% 0;
 }
 
-
 /* 下層
 ------------------------------------------*/
 
@@ -303,9 +306,7 @@ video {
     height: auto;
 }
 
-.read_TXT {
-    margin: 0 2.5%;
-}
+
 
 
 /* Tablet Layout: 768px to 992px. Inherits styles from: Mobile Layout. */
@@ -382,8 +383,8 @@ video {
     .MOV_thumb_box {
         width: 100%;
         margin-right: 3%;
-        padding: 10px 0px;
-        margin-bottom: 10px;
+		padding:10px 0px;
+		margin-bottom:10px;
     }
     .mov_thumb {}
     .mov_title {
@@ -439,7 +440,7 @@ video {
     .read_L {}
     .read_S {}
     .read_TXT {
-        padding: 0 1.5%;
+        /*padding: 0 1.5%;*/
     }
     .read_L,
     .read_S {}
@@ -564,9 +565,9 @@ video {
         width: 640px;
     }
     .MOV_thumb_box {
-        width: 100%;
-        padding: 10px 0px;
-        margin-bottom: 10px;
+        width:100%;
+		padding:10px 0px;
+		margin-bottom:10px;
     }
     .mov_thumb {}
     .mov_title {
@@ -633,9 +634,9 @@ video {
         margin-bottom: 15px;
         font-size: 14px;
     }
-    .side_menu_List {
-        padding: 10px 0;
-    }
+	.side_menu_List {
+		padding: 10px 0;
+	}
     /* 下層
 ------------------------------------------*/
     #page_cont {
@@ -687,7 +688,6 @@ video {
         display: none;
     }
 }
-
 
 /* Desktop Layout: 1200px to a max.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
@@ -776,19 +776,32 @@ video {
     }
     /* 動画リスト
 ------------------------------------------*/
-    .contents_sec_1 {
-        width: 640px;
-    }
     .MOV_thumb_box {
-        width: 100%;
-        padding: 10px 0px;
-        margin-bottom: 10px;
+        width:100%;
+		padding:10px 0px;
+		margin-bottom:10px;
     }
     .mov_thumb {}
-    .mov_title {
-        margin-top: 7px;
-        font-size: 12px;
+    /* 動画
+------------------------------------------*/
+    .video_wrapper {
+        width:100%;
+		padding:10px 0px;
+		margin-bottom:10px;
     }
+	.video_wrapper .video {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 75% 0 0;
+	}
+	.video_wrapper .video > iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		/*width: 100% !important;
+		height: 100% !important;*/
+	}
     /* 記事リスト
 ------------------------------------------*/
     .contents_sec_2 {}
@@ -903,3 +916,4 @@ video {
         display: none;
     }
 }
+
