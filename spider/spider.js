@@ -98,7 +98,7 @@ casper.then(function() {
 });
 
 casper.run(function() {
-    this.saveToCSV(infos);
+    this.saveToCSV();
     this.echo('infos length :' + infos.length);
     this.exit();
 });
