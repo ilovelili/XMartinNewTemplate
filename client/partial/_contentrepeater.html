@@ -10,6 +10,14 @@
 <!--△リード-->
 <!-- Headings -->
 <!--▽AD-->
+<div class="row">
+    <div class="col-lg-12 padding-top_s padding-bottom_s">
+        <a href="/" class="ad_1"><div class="centering"><img src="img/test/ad_creative_300-250.gif"></div></a>
+        <a href="/" class="ad_768"><img src="img/test/ad_creative_728-90.jpg"></a>
+        <a href="/" class="ad_992"><img src="img/test/ad_creative_728-90.jpg"></a>
+        <a href="/" class="ad_1200"><img src="img/test/ad_creative_728-90.jpg"></a>
+    </div>
+</div>
 <!--<ad-spot></ad-spot>-->
 <!--△AD-->
 <!--▼人気動画一覧BOX-->
@@ -26,7 +34,7 @@
                 <h2><a class="title" ng-click="go('/video/' + video._id)">{{video.title}}</a></h2>
                 <p class="keyword">
                     <span ng-repeat="cat in video.category track by $index" ng-if="cat">
-                        <a ng-click="go('/keyword/' + decodeURIComponent(cat))" class="accent-color">{{cat}}</a>
+                        <a ng-click="go('/keyword/' + decodeURIComponent(cat))" class="btn btn-info btn-xs">{{cat}}</a>
                     </span>
                 </p>
             </div>
@@ -36,7 +44,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="bs-component">
-            <a ng-click="go('/popular')" class="btn btn-default btn-block" translate="navi.POPULAR">人気動画一覧へ</a>
+            <a ng-click="go('/popular')" class="btn btn-primary btn-block" translate="navi.POPULAR">人気動画一覧へ</a>
         </div>
     </div>
 </div>
