@@ -8,6 +8,8 @@ var MongoClient = require('mongodb').MongoClient,
     path = require('path'),
     filePath = path.join(process.cwd(), 'meta/meta.csv');
 
+console.log('filepath is ' + filePath);    
+
 (function dumpXidsToCSV() {
     'use strict';
     var pattern = /http:\/\/flashservice.xvideos.com\/embedframe\/(\d+)/;

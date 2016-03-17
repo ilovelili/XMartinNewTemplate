@@ -1,4 +1,4 @@
-// filter out valid xids
+// filter out invalid xids
 var xids = [],
     ids = [],
     fs = require('fs'),
@@ -28,29 +28,25 @@ casper
                 return item.length > 0;
             });
 
-        xids = meta.map(function(record) {
-            return record.split('|')[1];
-        });
-        ids = meta.map(function(record) {
-            return record.split('|')[0];
-        });
+        meta.forEach(function(record, index) {
+            var fragments = record.split('|'),
+                id = fragments[0],
+                xid = fragments[1];
 
-        console.log('xids length: ' + xids.length);
-
-        xids.forEach(function(xid, index) {
-            var url = config.sourceUrl.replace('{{xvideoId}}', xid)
+            var url = config.sourceUrl.replace('{{xvideoId}}', xid);
             console.log('url is ' + url);
+
             casper
                 .thenOpen(url)
-                .waitForUrl(url)
                 .waitForText("We received a request to have this video deleted",
-                    function invalid() {
-                        // do nothing
+                    function videoDeleted() {
+                        console.log('xid invalid: ' + xid);
+                        // invalid ids
+                        xids.push(xid);
+                        ids.push(id);
                     },
-                    function valid() {
-                        // remove valid xids 
-                        xids.splice(index, 1);
-                        ids.splice(index, 1);
+                    function videoNonDeleted() {
+                        // do nothing
                     }, 3000 /*timeout*/ );
         });
     })
