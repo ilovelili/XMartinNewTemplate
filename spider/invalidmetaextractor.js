@@ -4,7 +4,7 @@ var xids = [],
     fs = require('fs'),
     casper = require('casper').create({
         verbose: true,
-        logLevel: 'error',
+        logLevel: 'debug',
         pageSettings: {
             loadImages: false,
             loadPlugins: false
@@ -12,6 +12,7 @@ var xids = [],
     }),
     config = require('config.json')['xvideos'],
     filePath = fs.pathJoin(fs.workingDirectory, 'meta', 'meta.csv');
+
 
 casper.overwritemeta = function() {
     'use strict';
@@ -37,17 +38,12 @@ casper
             console.log('url is ' + url);
 
             casper
-                .thenOpen(url)
-                .waitForText("We received a request to have this video deleted",
-                    function videoDeleted() {
-                        console.log('xid invalid: ' + xid);
-                        // invalid ids
+                .thenOpen(url, function(response) {
+                    if (response['status'] === 404) {
                         xids.push(xid);
                         ids.push(id);
-                    },
-                    function videoNonDeleted() {
-                        // do nothing
-                    }, 3000 /*timeout*/ );
+                    }
+                })
         });
     })
     .run(function runCasper() {
