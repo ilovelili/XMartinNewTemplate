@@ -89,6 +89,9 @@ var readFile = function() {
 };*/
 
 // dump
+
+// TODO: 20160317
+// continue while duplicate occurs
 dataToBeDumped = readFile();
 MongoClient.connect(url, function(err, db) {
     if (!err) {
