@@ -40,7 +40,7 @@ function shrinkVideos() {
         .filter(function(item) {
             return item.length > 0
         });
-        
+
     ids.forEach(function(id) {
         MongoClient.connect(url, function(err, db) {
             shrinkVideo(db, id, function() {
@@ -53,4 +53,4 @@ function shrinkVideos() {
 // go
 shrinkVideos();
 // unlink
-// unlinkMeta();
+unlinkMeta();
