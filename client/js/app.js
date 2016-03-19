@@ -15,18 +15,18 @@
                 .when('/home', {
                     templateUrl: 'partial/_home.html'
                 })
-                .when('/ranking', {
+                /*.when('/ranking', {
                     templateUrl: 'partial/_ranking.html'
+                })*/                
+                .when('/keyword/:cat', {
+                    templateUrl: 'partial/_keyword.html',
                 })
                 .when('/keyword', {
                     templateUrl: 'partial/_keyword.html'
                 })
-                .when('/keyword/:cat', {
-                    templateUrl: 'partial/_keyword.html'
-                })
                 .when('/video/:id', {
                     templateUrl: 'partial/_detail.html',
-                    controller: 'VideoDetailCtrl'
+                    controller: 'VideoDetailCtrl',
                 })
                 .otherwise({
                     redirectTo: '/home'
@@ -55,7 +55,7 @@
             $rootScope.back = function() {
                 $window.history.back();
             };
-            $rootScope.go = function(path) {
+            $rootScope.go = function(path) {                
                 $location.url(path);
             };
 
