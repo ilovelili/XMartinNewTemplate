@@ -6,3 +6,4 @@
 *.ruleset
 *.vsmdi
 *.testsettings
+*.csproj
