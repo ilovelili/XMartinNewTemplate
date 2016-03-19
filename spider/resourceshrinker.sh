@@ -3,15 +3,15 @@
 
 # dumper
 echo "   shrinker: dumper starts"
-nodejs /home/min/Projects/xmartin/spider/metadumper.js
+nodejs metadumper.js
 echo "   shrinker: dumper ends"
 
 # extractor
 echo "   extractor: invalid extraction starts"
-casperjs /home/min/Projects/xmartin/spider/invalidmetaextractor.js
+casperjs invalidmetaextractor.js
 echo "   extractor: invalid extraction ends"
 
 #shrinker
 echo "   extractor shrinker starts"
-nodejs /home/min/Projects/xmartin/spider/videoshrinker.js
+nodejs videoshrinker.js
 echo "   extractor shrinker ends"
