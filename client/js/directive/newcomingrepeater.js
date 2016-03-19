@@ -25,7 +25,7 @@
 
                     scope.videos = videos;
                     // init
-                    scope.limit = 10;
+                    scope.limit = 14;
                     scope.extendLimit = function(event) {
                         scope.limit += 8;
                         event.preventDefault();
