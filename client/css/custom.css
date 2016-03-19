@@ -235,7 +235,7 @@ h2{ font-size:1em !important;}
 ----------------------------------------------------------*/
 .mov_thumb {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 75%;
     height: 0;
     overflow: hidden;
 }
