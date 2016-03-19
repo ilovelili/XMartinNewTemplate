@@ -2,23 +2,16 @@
 # dump meta file
 
 # dumper
-echo "dumper start"
-
+echo "   shrinker: dumper starts"
 nodejs /home/min/Projects/xmartin/spider/metadumper.js
-
-echo "dumper done"
+echo "   shrinker: dumper ends"
 
 # extractor
-echo "invalid extraction start"
-
+echo "   extractor: invalid extraction starts"
 casperjs /home/min/Projects/xmartin/spider/invalidmetaextractor.js
-
-echo "invalid extraction done"
-
+echo "   extractor: invalid extraction ends"
 
 #shrinker
-echo "shrinker start"
-
+echo "   extractor shrinker starts"
 nodejs /home/min/Projects/xmartin/spider/videoshrinker.js
-
-echo "shrinker done"
+echo "   extractor shrinker ends"
