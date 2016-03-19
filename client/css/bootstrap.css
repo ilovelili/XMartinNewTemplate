@@ -2305,7 +2305,7 @@ html {
 
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, "Arial", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.42857;
   color: #333;
   background-color: #f9f9f9;
@@ -2464,7 +2464,7 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 32px;
+  font-size: 26px;
 }
 
 h2, .h2 {
@@ -2645,8 +2645,8 @@ a.bg-danger:focus {
 }
 
 .page-header {
-  padding-bottom: 10px;
-  margin: 11px 0 11px;
+  padding-bottom: 7px;
+  margin: 6px 0 6px;
   border-bottom: 1px solid #eee;
 }
 

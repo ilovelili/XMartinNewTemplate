@@ -8,7 +8,7 @@
 		"NEWVIDEOS": "新着無料XVIDEOSエロ動画",
 		"SIDERECOMMEND": "こちらもオススメ",
 		"KEYWORDLIST": "キーワード一覧",
-		"MOREREAD": "一覧をもっと見る"
+		"MOREREAD": "もっと見る"
 	},
 	"navi": {
 	    "HOME": "XVIDEOS♀まとめ",

@@ -182,6 +182,9 @@ video {
     margin-right: 4%;
     margin-bottom: 2%;
 }
+.MOV_thumb_group .MOV_thumb_container:nth-of-type(2n+1) .MOV_thumb_box {
+    margin-left: 4%;
+}
 
 .mov_thumb {
     width: 100%;
@@ -383,9 +386,12 @@ video {
     .MOV_thumb_box {
         width: 100%;
         margin-right: 3%;
-		padding:10px 0px;
+		padding:0px 0px;
 		margin-bottom:10px;
     }
+.MOV_thumb_group .MOV_thumb_container:nth-of-type(2n+1) .MOV_thumb_box {
+    margin-left: 0;
+}
     .mov_thumb {}
     .mov_title {
         margin-top: 3%;
@@ -566,7 +572,7 @@ video {
     }
     .MOV_thumb_box {
         width:100%;
-		padding:10px 0px;
+		padding:0px;
 		margin-bottom:10px;
     }
     .mov_thumb {}
@@ -778,7 +784,7 @@ video {
 ------------------------------------------*/
     .MOV_thumb_box {
         width:100%;
-		padding:10px 0px;
+		padding:0px;
 		margin-bottom:10px;
     }
     .mov_thumb {}
