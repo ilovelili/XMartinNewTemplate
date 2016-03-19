@@ -7,7 +7,7 @@
     };
 
     angular.module('eroMartin.dateService', [])
-        .factory('dateService', function() {
+        .factory('DateService', function() {
             return {
                 formatDate: function(date) {
                     date = new Date(date);

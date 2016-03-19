@@ -74,7 +74,7 @@ var readFile = function() {
     return result;
 };
 
-/*var unlinkFiles = function() {
+var unlinkFiles = function() {
     var files = fs.readdirSync(dir);
 
     for (var index in files) {
@@ -86,21 +86,24 @@ var readFile = function() {
             }
         });
     }
-};*/
+};
 
-// dump
 dataToBeDumped = readFile();
 MongoClient.connect(url, function(err, db) {
     if (!err) {
         var col = db.collection('videos');
 
-        // todo: upsert instead of insert
-        col.insert(dataToBeDumped, function(err, result) {
-            if (err) {
-                console.error(err);
-            }
-            db.close();            
-            // unlinkFiles();
-        });
+        col.insert(dataToBeDumped, {
+                continueOnError: true,
+                keepGoing: true,
+                safe: false,
+            },
+            function(err, result) {
+                if (err) {
+                    console.error(err);
+                }
+                db.close();
+                unlinkFiles();
+            });
     }
 });

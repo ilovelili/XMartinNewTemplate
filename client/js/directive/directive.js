@@ -4,10 +4,11 @@
         'eroMartin.naviDirective',
         'eroMartin.sidemenuDirective',
         'eroMartin.footerDirective',        
-        'eroMartin.contentRepeaterDirective',
+        //'eroMartin.contentRepeaterDirective',
         'eroMartin.newcomingRepeaterDirective',
         'eroMartin.googleanalyticsDirective',
         'eroMartin.adspotDirective',
-        'eroMartin.nativeAdSpotDirective'
+        'eroMartin.nativeAdSpotDirective',
+        'eroMartin.keywordRepeaterDirective',
     ]);
 })(window.angular);

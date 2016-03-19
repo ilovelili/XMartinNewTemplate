@@ -1,16 +1,16 @@
 (function(angular) {
     'use strict';
-    angular.module('eroMartin.newcomingRepeaterDirective', []).directive('newcomingRepeater', NewcomingRepeaterDirectiveFunc);
+    angular.module('eroMartin.keywordRepeaterDirective', []).directive('keywordRepeater', KeywordRepeaterDirectiveFunc);
 
-    NewcomingRepeaterDirectiveFunc.$inject = ['MongoService', 'DateService'];
+    KeywordRepeaterDirectiveFunc.$inject = ['MongoService', '$routeParams', 'DateService'];
 
-    function NewcomingRepeaterDirectiveFunc(MongoService, DateService) {
+    function KeywordRepeaterDirectiveFunc(MongoService, $routeParams, DateService) {
         return {
             restrict: 'E',
-            templateUrl: 'partial/_newcomingrepeater.html',
-            // or directive controller?
+            templateUrl: 'partial/_keywordrepeater.html',
             link: function(scope, elements, attributes) {
-                MongoService.getById().then(function(videos) {
+                scope.category = $routeParams.cat;
+                MongoService.getByCat(scope.category).then(function(videos) {
                     videos.map(function(video) {
                         angular.extend(video, {
                             date: DateService.formatDate(video.date)
@@ -24,12 +24,6 @@
                     });
 
                     scope.videos = videos;
-                    // init
-                    scope.limit = 14;
-                    scope.extendLimit = function(event) {
-                        scope.limit += 8;
-                        event.preventDefault();
-                    };
                 });
             }
         };

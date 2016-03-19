@@ -10,9 +10,7 @@ var MongoClient = require('mongodb').MongoClient,
     ObjectId = require('mongodb').ObjectID;
 
 var shrinkVideo = function(db, id, callback) {
-    db.collection('videos').updateOne(
-        { _id: new ObjectId(id) }, 
-        {
+    db.collection('videos').updateOne({ _id: new ObjectId(id) }, {
             $set: { "enabled": false },
         },
         function(err, results) {
@@ -37,7 +35,12 @@ var unlinkMeta = function() {
 
 function shrinkVideos() {
     'use strict';
-    var ids = fs.readFileSync(filePath, 'utf8').split(',');
+    var ids = fs.readFileSync(filePath, 'utf8')
+        .split(',')
+        .filter(function(item) {
+            return item.length > 0
+        });
+
     ids.forEach(function(id) {
         MongoClient.connect(url, function(err, db) {
             shrinkVideo(db, id, function() {
