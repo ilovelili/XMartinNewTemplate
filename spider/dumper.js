@@ -93,7 +93,6 @@ MongoClient.connect(url, function(err, db) {
     if (!err) {
         var col = db.collection('videos');
 
-        // todo: upsert instead of insert
         col.insert(dataToBeDumped, {
                 continueOnError: true,
                 keepGoing: true,
