@@ -103,8 +103,7 @@ exports.aggregateCat = function(req, res) {
                     }
                 }
             }]).toArray(function(err, docs) {
-                if (!err) {
-                    console.log('docs are ' + docs);
+                if (!err) {    
                     res.jsonp(docs);
                 }
                 db.close();
