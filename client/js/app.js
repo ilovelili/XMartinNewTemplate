@@ -22,7 +22,7 @@
                     templateUrl: 'partial/_keyword.html',
                 })
                 .when('/keyword', {
-                    templateUrl: 'partial/_keyword.html'
+                    templateUrl: 'partial/_keywords.html'
                 })
                 .when('/video/:id', {
                     templateUrl: 'partial/_detail.html',
