@@ -2,12 +2,13 @@
     "title": "XVIDEOS Summary",
 	"list": {
 	    "POPULAR": "Popular videos",
-		"POPULARWEEK": "Weekly Popular videos",
-		"POPULARMONTH": "Monthly Popular videos",
-		"POPULARFULLTIME": "All Popular videos",
+		"POPULARWEEK": "Weekly popular videos",
+		"POPULARMONTH": "Monthly popular videos",
+		"POPULARFULLTIME": "All popular videos",
 		"NEWVIDEOS": "Latest videos",
 		"SIDERECOMMEND": "Recommanded",
-		"KEYWORDLIST": "Keyword List",
+		"KEYWORDLIST": ">Keyword list",
+		"POPULARKEYWORD": "Popular keywords",
 		"MOREREAD": "More"
 	},
 	"navi": {

@@ -17,7 +17,7 @@
                 })
                 /*.when('/ranking', {
                     templateUrl: 'partial/_ranking.html'
-                })*/                
+                })*/
                 .when('/keyword/:cat', {
                     templateUrl: 'partial/_keyword.html',
                 })
@@ -51,20 +51,31 @@
             }
         ])
         // rootscope register
-        .run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
+        .run(['$rootScope', '$window', '$location', 'MongoService', function($rootScope, $window, $location, MongoService) {
             $rootScope.back = function() {
                 $window.history.back();
             };
-            $rootScope.go = function(path) {                
+            $rootScope.go = function(path) {
                 $location.url(path);
             };
 
             $rootScope.$on('$routeChangeSuccess', function(newVal, oldVal) {
                 // init navi bar
                 var navi = $('.navbar-toggle');
-                if(navi.attr('aria-expanded') === 'true') {
+                if (navi.attr('aria-expanded') === 'true') {
                     navi.click();
                 }
+            });
+
+            // aggregate is heavy so only run once
+            MongoService.aggregateCat().then(function(cats) {
+                cats.map(function(cat) {
+                    angular.extend(cat, {
+                        name: cat["_id"][0],
+                    });
+                });
+
+                $rootScope.aggregateCats = cats;
             });
         }]);
 })(window.angular);

@@ -7,7 +7,11 @@
     function SideMenuDirectiveFunc() {
         return {
         	restrict: 'E',
-        	templateUrl: 'partial/_sidemenu.html'
+        	templateUrl: 'partial/_sidemenu.html',
+        	scope: true,
+        	link: function(scope) {
+        		scope.limit = 10;
+        	},
         };
     }
 })(window.angular);

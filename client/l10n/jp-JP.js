@@ -7,13 +7,14 @@
 		"POPULARFULLTIME": "全期間人気無料XVIDEOSエロ動画",
 		"NEWVIDEOS": "新着無料XVIDEOSエロ動画",
 		"SIDERECOMMEND": "こちらもオススメ",
-		"KEYWORDLIST": "キーワード一覧",
+		"KEYWORDLIST": ">キーワード一覧",
+		"POPULARKEYWORD": "人気キーワード",
 		"MOREREAD": "もっと見る"
 	},
 	"navi": {
 	    "HOME": "XVIDEOS♀まとめ",
 		"RANKING": "ランキング",
-		"KEYWORD": "キーワード",
+		"KEYWORD": "キーワード",		
 		"POPULAR": "人気動画一覧へ",
 		"POPULARWEEK": "週間人気動画一覧へ",
 		"POPULARMONTH": "月間人気動画一覧へ",
