@@ -7,7 +7,7 @@
 		"POPULARFULLTIME": "All popular videos",
 		"NEWVIDEOS": "Latest videos",
 		"SIDERECOMMEND": "Recommanded",
-		"KEYWORDLIST": ">Keyword list",
+		"KEYWORDLIST": "> More keywords",
 		"POPULARKEYWORD": "Popular keywords",
 		"MOREREAD": "More"
 	},
