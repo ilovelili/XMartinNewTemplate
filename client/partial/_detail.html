@@ -11,27 +11,28 @@
         </div>
         <!--△リード-->
         <!-- Headings -->
-        <!--▼新着動画一覧BOX-->
-        <div class="row content_list_more margin-top_s">
+        <!--▼動画再生-->
+        <div class="row detail margin-top_s">
             <div class="col-lg-12 padding-top_s padding-bottom_s video_wrapper">
                 <div class="video" ng-bind-html="trustedLink"></div>
                 <div class="MOV_BOX_res">
+                    <span class="time label label-default"><span translate="detail.DURATION">再生時間</span>: {{video.duration}}</span><br />
                     <p class="keyword">
                         <span ng-repeat="cat in video.category track by $index" ng-if="cat">
-                        	<a ng-click="go('/keyword/{{cat}}')">{{cat}}</a>
-                    	</span></p>
-                    <span class="time"><span translate="detail.DURATION">再生時間</span>: {{video.duration}}</span><br />
-                    <span class="date"><span translate="detail.UPDATETIME">更新時刻</span>: {{video.date}}</span>
+                            <a class="btn btn-default btn-xs round-corner" ng-click="go('/keyword/{{cat}}')">{{cat}}</a>
+                        </span>
+                    </p>
+                    <p class="date"><span translate="detail.UPDATETIME">更新日時</span>: {{video.date}}</p>
                 </div>
             </div>
         </div>
-        <!--▲新着動画一覧BOX-->
+        <!--▲動画再生-->
 
         <!--todo: find by cat panel-->
         <div class="row">
             <div class="col-lg-12">
                 <div class="bs-component">
-                    <a ng-click="go('/popular')" class="btn btn-default btn-block" translate="navi.POPULAR">人気動画一覧へ</a>
+                    <a ng-click="go('/popular')" class="btn btn-primary btn-block" translate="navi.NEWVIDEOS">新着動画一覧</a>
                 </div>
             </div>
         </div>

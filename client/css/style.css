@@ -438,7 +438,6 @@ video {
     .side_menu_box_border {}
     .side_menu_List {
         list-style: none;
-        border-bottom: solid 1px #ABABAB;
         padding: 2% 0;
     }
     /* リード

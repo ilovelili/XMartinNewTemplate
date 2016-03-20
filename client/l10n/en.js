@@ -1,5 +1,5 @@
 {
-    "title": "Welcome to EroHotel",
+    "title": "XVIDEOS Summary",
 	"list": {
 	    "POPULAR": "Popular videos",
 		"POPULARWEEK": "Weekly Popular videos",
@@ -21,5 +21,9 @@
 		"NEWVIDEOS": "More latest videos",
 		"SEARCH": "Search",
 		"MOREREAD": "More"
-	}
+	},
+    "detail": {
+        "DURATION": "Play time",
+		"UPDATETIME": "Update time"
+    }
 }

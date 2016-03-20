@@ -32,4 +32,6 @@ window.onload = function () {
         $(":root").find(".ranking_switch_month").hide();
         $(":root").find(".ranking_switch_fulltime").show();
     });
+
+    $(".video_wrapper .video iframe").addClass('player');
 };

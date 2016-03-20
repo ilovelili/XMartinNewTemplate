@@ -12,7 +12,7 @@ h2{ font-size:1em !important;}
 
 
 .MOV_thumb_box {
-	height:202px;
+	/*height:252px;*/
 	box-sizing:border-box;
 }
 .MOV_BOX_res h2{
@@ -29,7 +29,13 @@ h2{ font-size:1em !important;}
 	height:3.2em;
 	margin-bottom:0px;
 }
-
+.side_menu_section .read_TXT {
+	padding-left:1em;
+}
+.side_menu_section .side_menu_box_border .side_menu_List {
+	padding:5px 0px;
+	border-bottom: solid 1px #eee;
+}
 
 /* Tablet Layout: 768px to 992px. Inherits styles from: Mobile Layout. */
 @media ( min-width: 768px ) {
@@ -67,7 +73,7 @@ h2{ font-size:1em !important;}
     margin-bottom: 10px;
 }
 .MOV_thumb_box {
-	height:230px;
+	/*height:240px;*/
 	box-sizing:border-box;
 }
 .MOV_BOX_res h2{
@@ -140,7 +146,7 @@ h2{ font-size:1em !important;}
 	padding:10px 0px;
 }
 .MOV_thumb_box {
-	height:210px;
+	height:230px;
 	box-sizing:border-box;
 }
 .MOV_BOX_res h2{
@@ -237,6 +243,24 @@ h2{ font-size:1em !important;}
 
 /* 共通
 ----------------------------------------------------------*/
+header .nav {
+	font-size:1.2em;
+}
+header .nav .keyword{}
+header .nav .keyword:before{
+	position:relative;
+	top:4px;
+	left:-3px;
+	content:"";
+	display:inline-block;
+	width:1.2em;
+	height:1.2em;
+	background-image:url(../img/keyword.svg);
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+
+
 .mov_thumb {
     position: relative;
     padding-bottom: 75%;
@@ -330,6 +354,8 @@ h2{ font-size:1em !important;}
 	opacity:0.4;
 	padding-left:4px;
 	padding-right:4px;
+	margin-bottom:2px;
+	line-height:0.8em;
 }
 
 .arrow_down{
@@ -340,7 +366,7 @@ h2{ font-size:1em !important;}
 	position:relative;
 	left:-10px;
 	top:-5px;
-	font-size:14px;
+	font-size:0.7em;
 	display:inline-block;
 	letter-spacing:-0.7em;
 	transform:rotate(90deg) scaleY(1.5) scaleX(0.8);

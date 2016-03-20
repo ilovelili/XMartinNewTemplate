@@ -1,5 +1,5 @@
 {
-    "title": "エロホテルへようこそ",
+    "title": "無料エロ動画のXVIDEOS♀まとめ",
 	"list": {
 	    "POPULAR": "人気無料XVIDEOSエロ動画",
 		"POPULARWEEK": "週間人気無料XVIDEOSエロ動画",
@@ -21,5 +21,9 @@
 		"NEWVIDEOS": "新着動画一覧へ",
 		"SEARCH": "検索",
 		"MOREREAD": "もっと見る"
-	}
+	},
+    "detail": {
+        "DURATION": "再生時間",
+		"UPDATETIME": "更新日時"
+    }
 }
