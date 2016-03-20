@@ -7,3 +7,7 @@
 *.vsmdi
 *.testsettings
 *.csproj
+*.user
+*.exe
+*.manifest
+*.cache
