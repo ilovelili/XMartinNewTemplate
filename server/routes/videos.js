@@ -6,7 +6,11 @@ var MongoClient = require('mongodb').MongoClient,
     port = process.env.MongoPort || 27017,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
-    ObjectId = require('mongodb').ObjectID;
+    ObjectId = require('mongodb').ObjectID,
+    startDate = new Date();
+
+// get last year
+startDate.setFullYear(startDate.getFullYear() - 1);
 
 exports.findById = function(req, res) {
     'use strict';
@@ -17,7 +21,7 @@ exports.findById = function(req, res) {
             var col = db.collection('videos');
             col.findOne({
                 _id: new ObjectId(id),
-                enabled: true
+                enabled: true,
             }, function(err, doc) {
                 if (!err) {
                     res.jsonp(doc);
@@ -38,7 +42,8 @@ exports.findByCat = function(req, res) {
             var col = db.collection('videos');
             col.find({
                 category: cat,
-                enabled: true
+                enabled: true,
+                date: { $gte: startDate },
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
@@ -59,8 +64,8 @@ exports.findByDate = function(req, res) {
         if (!err) {
             var col = db.collection('videos');
             col.find({
-                date: date,
-                enabled: true
+                enabled: true,
+                date: { $gte: date },
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
@@ -76,8 +81,10 @@ exports.findAll = function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (!err) {
             var col = db.collection('videos');
+            // find created in one year
             col.find({
-                enabled: true
+                enabled: true,
+                date: { $gte: startDate },
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
@@ -95,15 +102,17 @@ exports.aggregateCat = function(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (!err) {
             var col = db.collection('videos');
-            col.aggregate([{
-                $group: {
-                    _id: "$category",
-                    count: {
-                        $sum: 1
+            col.aggregate([
+                { $unwind: "$category" }, {
+                    $group: {
+                        _id: "$category",
+                        count: {
+                            $sum: 1
+                        }
                     }
                 }
-            }]).toArray(function(err, docs) {
-                if (!err) {    
+            ]).toArray(function(err, docs) {
+                if (!err) {
                     res.jsonp(docs);
                 }
                 db.close();

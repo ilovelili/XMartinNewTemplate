@@ -17,7 +17,7 @@
         </div>
         <!--△サイドバーリード-->
         <div class="side_menu_box_border">
-            <li class="side_menu_List" ng-repeat="cat in aggregateCats | orderBy: '-cat.count' | limitTo: limit" ng-if="cat.name">
+            <li class="side_menu_List" ng-repeat="cat in aggregateCats | limitTo: limit" ng-if="cat.name">
                 <a ng-click="go('/keyword/{{cat.name}}')">{{cat.name}}</a>
             </li>
             <li class="side_menu_List"><a ng-click="go('/keyword')" translate="list.KEYWORDLIST">&gt;キーワード一覧</a></li>

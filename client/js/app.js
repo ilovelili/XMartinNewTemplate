@@ -60,7 +60,7 @@
             };
 
             $rootScope.$on('$routeChangeSuccess', function(newVal, oldVal) {
-                // init navi bar
+                // hack: init navi bar
                 var navi = $('.navbar-toggle');
                 if (navi.attr('aria-expanded') === 'true') {
                     navi.click();
@@ -71,11 +71,18 @@
             MongoService.aggregateCat().then(function(cats) {
                 cats.map(function(cat) {
                     angular.extend(cat, {
-                        name: cat["_id"][0],
+                        name: cat["_id"],
                     });
                 });
 
-                $rootScope.aggregateCats = cats;
+                $rootScope.aggregateCats = cats
+                    .sort(function(cat1, cat2) {
+                        if (cat1.count > cat2.count)
+                            return -1;
+                        if (cat1.count < cat2.count)
+                            return 1;
+                        return 0;
+                    });
             });
         }]);
 })(window.angular);

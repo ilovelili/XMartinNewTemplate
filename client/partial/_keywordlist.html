@@ -3,7 +3,7 @@
     <div class="col-sm-12">
         <div class="checkbox">
             <!--todo ng-class btn-xs btn-sm...-->
-            <label class="btn btn-default" ng-repeat="cat in aggregateCats | orderBy: '-cat.count'" ng-if="cat.name">
+            <label class="btn btn-default" ng-repeat="cat in aggregateCats | limitTo: limit" ng-if="cat.name">
                 <input type="checkbox" ng-> {{cat.name}}
             </label>
         </div>
