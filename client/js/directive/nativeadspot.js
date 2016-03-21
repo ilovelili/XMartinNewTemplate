@@ -1,8 +1,9 @@
 (function(angular) {
     'use strict';
     angular.module('eroMartin.nativeAdSpotDirective', []).directive('nativeAdSpot', NativeAdSpotFunc);
+    NativeAdSpotFunc.$inject = ['UseragentService'];
 
-    function NativeAdSpotFunc() {
+    function NativeAdSpotFunc(UseragentService) {
         return {
             restrict: 'E',
             templateUrl: 'partial/_nativeadspot.html',
@@ -10,7 +11,12 @@
             scope: false,
             link: function(scope) {
                 // init
-                scope.limit = 15;
+                if (UseragentService.isPC) {
+                    scope.limit = 15;
+                } else {
+                    scope.limit = 14;
+                }
+
                 scope.extendLimit = function(event) {
                     scope.limit += 8;
                     event.preventDefault();
