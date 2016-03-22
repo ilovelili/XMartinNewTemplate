@@ -20,7 +20,7 @@
 		"POPULARWEEK": "週間人気動画一覧へ",
 		"POPULARMONTH": "月間人気動画一覧へ",
 		"POPULARFULLTIME": "全期間人気動画一覧へ",
-		"NEWVIDEOS": "新着動画一覧へ",
+		"NEWVIDEOS": "新着動画一覧へ"
 	},
     "detail": {
         "DURATION": "再生時間",
