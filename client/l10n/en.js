@@ -21,7 +21,7 @@
 		"POPULARFULLTIME": "More whole period poplular videos",
 		"NEWVIDEOS": "More latest videos",
 		"SEARCH": "Search",
-		"MOREREAD": "More"
+		"MOREREAD": "More videos"
 	},
     "detail": {
         "DURATION": "Play time",
