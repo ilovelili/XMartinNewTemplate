@@ -404,3 +404,8 @@ header .nav .keyword:before{
 .btn-xs.round-corner{
 	padding:0px 0.6em; 
 }
+
+/*footer*/
+.smaller {
+	font-size: smaller;
+}
