@@ -9,7 +9,8 @@
 		"SIDERECOMMEND": "こちらもオススメ",
 		"KEYWORDLIST": ">キーワード一覧",
 		"POPULARKEYWORD": "人気キーワード",
-		"MOREREAD": "もっと見る"
+		"MOREREAD": "もっと見る",		
+		"SEARCH": "検索"
 	},
 	"navi": {
 	    "HOME": "XVIDEOS♀まとめ",
@@ -20,8 +21,6 @@
 		"POPULARMONTH": "月間人気動画一覧へ",
 		"POPULARFULLTIME": "全期間人気動画一覧へ",
 		"NEWVIDEOS": "新着動画一覧へ",
-		"SEARCH": "検索",
-		"MOREREAD": "もっと見る"
 	},
     "detail": {
         "DURATION": "再生時間",

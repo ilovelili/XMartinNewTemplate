@@ -9,7 +9,8 @@
 		"SIDERECOMMEND": "Recommanded",
 		"KEYWORDLIST": "> More keywords",
 		"POPULARKEYWORD": "Popular keywords",
-		"MOREREAD": "More"
+		"MOREREAD": "More videos",
+		"SEARCH": "Search"
 	},
 	"navi": {
 	    "HOME": "Home♀",
@@ -19,9 +20,7 @@
 		"POPULARWEEK": "More Weekly poplular videos",
 		"POPULARMONTH": "More Monthly poplular videos",
 		"POPULARFULLTIME": "More whole period poplular videos",
-		"NEWVIDEOS": "More latest videos",
-		"SEARCH": "Search",
-		"MOREREAD": "More videos"
+		"NEWVIDEOS": "More latest videos"		
 	},
     "detail": {
         "DURATION": "Play time",
