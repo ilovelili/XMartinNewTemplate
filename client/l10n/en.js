@@ -1,5 +1,5 @@
 {
-    "title": "XVIDEOS Summary",
+    "title": "Welcome to ero-hotel",
 	"list": {
 	    "POPULAR": "Popular videos",
 		"POPULARWEEK": "Weekly popular videos",
