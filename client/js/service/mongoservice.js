@@ -17,7 +17,10 @@
                         }
 
                         return $resource('http://188.166.244.244:3000/videos/cat/:cat', {}).query().$promise;
-                    }
+                    },
+                    aggregateCat: function() {
+                        return $resource('http://188.166.244.244:3000/aggregateCat/', {}).query().$promise;
+                    },
                 };
             }
         ]);

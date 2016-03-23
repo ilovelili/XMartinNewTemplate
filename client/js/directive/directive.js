@@ -10,5 +10,6 @@
         'eroMartin.adspotDirective',
         'eroMartin.nativeAdSpotDirective',
         'eroMartin.keywordRepeaterDirective',
+        'eroMartin.keywordListDirective',
     ]);
 })(window.angular);
