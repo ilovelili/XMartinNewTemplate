@@ -33,5 +33,19 @@ window.onload = function () {
         $(":root").find(".ranking_switch_fulltime").show();
     });
 
+    // 動画iframeのサイズを調整
     $(".video_wrapper .video iframe").addClass('player');
+
+    // キーワードリストのボタンオンオフ
+    $(".form-group .checkbox label").click(function () {
+        if ($(this).children().is(':checked')) {
+            $(this).addClass("btn-info");
+            $(this).removeClass("btn-default");
+        } else {
+            $(this).addClass("btn-default");
+            $(this).removeClass("btn-info");
+        };
+
+    });
 };
+$(".video_wrapper .video iframe").addClass('player');

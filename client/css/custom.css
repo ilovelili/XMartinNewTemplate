@@ -337,8 +337,9 @@ header .nav .keyword:before{
 }
 
 
-.form-group .checkbox { line-height:3em;}
-.form-group .checkbox label { padding-left:12px;}
+.form-group .checkbox { line-height:4em;}
+.form-group .checkbox label { padding-left:12px; margin-right:0.5em;}
+.form-group .checkbox label:last-child { margin-right:0px;}
 .form-group .checkbox label.btn-lg, .form-group .checkbox label.btn-group-lg > .btn { padding: 10px 20px; }
 .form-group .checkbox label.btn-sm, .form-group .checkbox label.btn-group-sm > .btn { padding: 5px 10px; }
 .form-group .checkbox label.btn-xs, .form-group .checkbox label.btn-group-xs > .btn { padding: 1px 5px; }
