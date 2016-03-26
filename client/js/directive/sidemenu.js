@@ -10,7 +10,7 @@
         	templateUrl: 'partial/_sidemenu.html',
         	scope: true,
         	link: function(scope) {
-        		scope.limit = 10;
+        		scope.limit = 15;
         	},
         };
     }
