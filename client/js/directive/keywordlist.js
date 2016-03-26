@@ -64,16 +64,22 @@
 
                     searchCriteria = [];
                     scope.searchClicked = true;
+
+                    var keywordsLabel = $(".form-group .checkbox label");
+                    if (keywordsLabel) {
+                        keywordsLabel.removeClass('btn-info');
+                        keywordsLabel.addClass('btn-default');
+                    }
                 };
 
                 $timeout(function() {
                     // hack btn toggle
-                    var keywordsLabel = $(".form-group .checkbox label");
+                    var keywordsLabel = $('.form-group .checkbox label');
                     if (keywordsLabel) {
                         keywordsLabel.delegate('input[type="checkbox"]', 'click', function() {
                             // キーワードリストのボタンオンオフ
-                            $(this).parent().toggleClass("btn-info");
-                            $(this).parent().toggleClass("btn-default");
+                            $(this).parent().toggleClass('btn-info');
+                            $(this).parent().toggleClass('btn-default');
                         });
                     }
                 }, 320);
