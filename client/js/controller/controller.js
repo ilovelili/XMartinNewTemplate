@@ -24,6 +24,43 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoSer
             $scope.$digest();
         });
     });
+
+    $scope.$watch('video', function(newvalue, oldvalue, scope) {
+        if (newvalue && newvalue != oldvalue) {
+            var cats = scope.video.category;
+            scope.videos = [];
+            angular.forEach(cats, function(cat) {
+                MongoService.getByCat(cat).then(function(videos) {
+                    videos.map(function(video) {
+                        angular.extend(video, {
+                            date: DateService.formatDate(video.date)
+                        });
+
+                        // stupid hack
+                        if (video.title.length > 24)
+                            angular.extend(video, {
+                                title: video.title.substring(0, 24) + '...'
+                            });
+                    });
+
+                    scope.videos = scope.videos.concat(videos);
+                    // remove duplicate by _id (consider use filter) and need check performance issue
+                    var result = [];
+                    angular.forEach(scope.videos, function(video) {
+                        var ids = result.map(function(item) {
+                            return item._id;
+                        });
+
+                        if (ids.indexOf(video._id) === -1 && video._id !== scope.video._id) {
+                            result.push(video);
+                        }
+                    });
+
+                    scope.videos = result;
+                });
+            });
+        }
+    });
 }
 
 function resloveIframeResponsive($scope, $sce, $timeout) {

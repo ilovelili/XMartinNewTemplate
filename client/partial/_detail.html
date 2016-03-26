@@ -16,7 +16,8 @@
             <div class="col-lg-12 padding-top_s padding-bottom_s video_wrapper">
                 <div class="video" ng-bind-html="trustedLink"></div>
                 <div class="MOV_BOX_res">
-                    <span class="time label label-default"><span translate="detail.DURATION">再生時間</span>: {{video.duration}}</span><br />
+                    <span class="time label label-default"><span translate="detail.DURATION">再生時間</span>: {{video.duration}}</span>
+                    <br />
                     <p class="keyword">
                         <span ng-repeat="cat in video.category track by $index" ng-if="cat">
                             <a class="btn btn-default btn-xs round-corner" ng-click="go('/keyword/{{cat}}')">{{cat}}</a>
@@ -27,7 +28,6 @@
             </div>
         </div>
         <!--▲動画再生-->
-
         <!--todo: find by cat panel-->
         <div class="row">
             <div class="col-lg-12">
@@ -36,6 +36,15 @@
                 </div>
             </div>
         </div>
+        <!--recomended videos-->
+        <div class="row" ng-if="videos.length">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h1 id="type" translate="detail.RECOMMENDED">お勧め動画</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row MOV_thumb_group" ng-include="'partial/inner/_innerrepeater.html'" ng-if="videos.length"></div>
     </div>
     <!--▲メインセクション-->
     <side-menu></side-menu>
