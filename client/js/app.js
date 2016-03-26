@@ -71,7 +71,7 @@
             MongoService.aggregateCat().then(function(cats) {
                 cats.map(function(cat) {
                     angular.extend(cat, {
-                        name: cat["_id.name"],
+                        name: cat["_id.cat"],
                     });
                 });
 
