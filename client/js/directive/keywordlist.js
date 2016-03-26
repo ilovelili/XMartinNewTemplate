@@ -2,9 +2,9 @@
     'use strict';
     angular.module('eroMartin.keywordListDirective', []).directive('keywordList', KeywordListDirectiveFunc);
 
-    KeywordListDirectiveFunc.$inject = ['MongoService', 'DateService'];
+    KeywordListDirectiveFunc.$inject = ['$timeout', 'MongoService', 'DateService'];
 
-    function KeywordListDirectiveFunc(MongoService, DateService) {
+    function KeywordListDirectiveFunc($timeout, MongoService, DateService) {
         'use strict';
         return {
             restrict: 'E',
@@ -12,21 +12,25 @@
             scope: true,
             link: function(scope) {
                 var searchCriteria = [];
+
                 scope.limit = 100;
                 scope.videos = [];
+                scope.checked = false;
                 scope.searchClicked = false;
-                scope.setupSearchCriteria = function(cat) {
+                scope.setupSearchCriteria = function($event, cat) {
+                    scope.checked = $event.target.checked;
+
                     var index = searchCriteria.indexOf(cat);
                     if (index > -1) {
                         searchCriteria.splice(index, 1)
                     } else {
-                        // db overload => can't set more that 5 cats
-                        if (searchCriteria.length > 5) return;
+                        // todo: set overload when necessary e.g. if searchCriteria.length > 5 return;
                         searchCriteria.push(cat);
                     }
                 };
                 scope.search = function() {
                     scope.videos = [];
+
                     angular.forEach(searchCriteria, function(cat, index) {
                         MongoService.getByCat(cat).then(function(videos) {
                             videos.map(function(video) {
@@ -40,13 +44,39 @@
                                         title: video.title.substring(0, 24) + '...'
                                     });
                             });
-                            
+
                             scope.videos = scope.videos.concat(videos);
+                            // remove duplicate by _id (consider use filter) and need check performance issue
+                            var result = [];
+                            angular.forEach(scope.videos, function(video) {
+                                var ids = result.map(function(item) {
+                                    return item._id;
+                                });
+
+                                if (ids.indexOf(video._id) === -1) {
+                                    result.push(video);
+                                }
+                            });
+
+                            scope.videos = result;
                         });
                     });
 
+                    searchCriteria = [];
                     scope.searchClicked = true;
                 };
+
+                $timeout(function() {
+                    // hack btn toggle
+                    var keywordsLabel = $(".form-group .checkbox label");
+                    if (keywordsLabel) {
+                        keywordsLabel.delegate('input[type="checkbox"]', 'click', function() {
+                            // キーワードリストのボタンオンオフ
+                            $(this).parent().toggleClass("btn-info");
+                            $(this).parent().toggleClass("btn-default");
+                        });
+                    }
+                }, 320);
             },
         };
     }
