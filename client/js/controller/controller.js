@@ -26,11 +26,11 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, MongoService, Date
     });
 }
 
-function resloveIframeResponsive(scope, $sce) {
+function resloveIframeResponsive($scope, $sce) {
     // very ugly iframe responsive hack
     var width = Math.min($(document.body).width(), 728),
-        video = scope.video;
+        video = $scope.video;
 
     var responsiveLink = video.link.replace('{{width}}', width).replace('{{height}}', width / 728 * 500);
-    scope.trustedLink = $sce.trustAsHtml(responsiveLink);
+    $scope.trustedLink = $sce.trustAsHtml(responsiveLink);
 }

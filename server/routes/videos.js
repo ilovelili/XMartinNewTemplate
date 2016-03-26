@@ -103,12 +103,21 @@ exports.aggregateCat = function(req, res) {
         if (!err) {
             var col = db.collection('videos');
             col.aggregate([
-                { $unwind: "$category" }, {
+                { $unwind: "$category" }, 
+                {
                     $group: {
-                        _id: "$category",
+                        _id: {
+                            cat: "$category",
+                            enabled: "$enabled",
+                        },
                         count: {
                             $sum: 1
-                        }
+                        },
+                    },
+                }, 
+                {
+                    $match: {
+                        "_id.enabled": true,
                     }
                 }
             ]).toArray(function(err, docs) {
