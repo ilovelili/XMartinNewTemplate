@@ -9,7 +9,8 @@
             'pascalprecht.translate',
             'eroMartin.controllers',
             'eroMartin.services',
-            'eroMartin.directives'
+            'eroMartin.directives',
+            'eroMartin.filters',
         ]).config(['$routeProvider', function($routeProvider) {
             $routeProvider
                 .when('/home', {

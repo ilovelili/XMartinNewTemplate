@@ -40,7 +40,7 @@
                                         title: video.title.substring(0, 24) + '...'
                                     });
                             });
-
+                            
                             scope.videos = scope.videos.concat(videos);
                         });
                     });

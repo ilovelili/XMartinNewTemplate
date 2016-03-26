@@ -10,7 +10,8 @@
 		"KEYWORDLIST": "キーワード一覧",
 		"POPULARKEYWORD": "人気キーワード",
 		"MOREREAD": "もっと見る",		
-		"SEARCH": "検索"
+		"SEARCH": "検索",
+		"RESULT": "検索結果"
 	},
 	"navi": {
 	    "HOME": "XVIDEOS♀まとめ",
