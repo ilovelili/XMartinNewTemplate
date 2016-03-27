@@ -6,7 +6,6 @@
 .ad_768 { display:none; }
 .ad_992 { display:none; }
 .ad_1200 { display:none; }
-.video_wrapper .video > iframe {height:490px;}
 h2{ font-size:1em !important;}
 
 
@@ -179,6 +178,9 @@ h2{ font-size:1em !important;}
 /* Desktop Layout: 1200px to a max.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media ( min-width: 1200px ) {
+/*... at least puty it into media query..*/
+.video_wrapper .video > iframe {height:490px;}
+	
 #banner {
     min-height: 300px;
     border-bottom: none;
