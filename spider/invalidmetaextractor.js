@@ -40,7 +40,7 @@ casper
 
             casper
                 .thenOpen(url, function(response) {
-                    if (response['status'] === 404) {
+                    if (response['status'] != 200) {
                         xids.push(xid);
                         ids.push(id);
                     }
