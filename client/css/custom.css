@@ -19,7 +19,7 @@ h2{ font-size:1em !important;}
 }
 
 .MOV_BOX_res {
-	padding-left: 12px;
+	/*padding-left: 12px;*/
 }
 
 .MOV_BOX_res h2{
@@ -253,6 +253,7 @@ h2{ font-size:1em !important;}
 header .nav {
 	font-size:1.2em;
 }
+header .title_logo {width:219px; height:35px;}
 header .nav .keyword{}
 header .nav .keyword:before{
 	position:relative;
@@ -379,6 +380,7 @@ header .nav .keyword:before{
 	letter-spacing:-0.7em;
 	transform:rotate(90deg) scaleY(1.5) scaleX(0.8);
 }
+p.desc { margin:1em 0px; }
 
 
 .more_gdj > .adv {
