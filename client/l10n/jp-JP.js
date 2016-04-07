@@ -17,6 +17,7 @@
 	    "HOME": "XVIDEOS♀まとめ",
 		"RANKING": "ランキング",
 		"KEYWORD": "キーワード",		
+		"ABOUT": "アバウト",
 		"POPULAR": "人気動画一覧へ",
 		"POPULARWEEK": "週間人気動画一覧へ",
 		"POPULARMONTH": "月間人気動画一覧へ",

@@ -15,9 +15,9 @@
                 .when('/home', {
                     templateUrl: 'partial/_home.html'
                 })
-                /*.when('/ranking', {
-                    templateUrl: 'partial/_ranking.html'
-                })*/
+                .when('/about', {
+                    templateUrl: 'partial/_about.html'
+                })
                 .when('/keyword/:cat', {
                     templateUrl: 'partial/_keyword.html',
                 })
