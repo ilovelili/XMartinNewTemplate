@@ -1,7 +1,6 @@
 ﻿body { padding-top: 80px; }
 
 /* Mobile Layout: 480px and below. */
-
 .ad_1 { display:block; }
 .ad_768 { display:none; }
 .ad_992 { display:none; }
@@ -243,9 +242,6 @@ h2{ font-size:1em !important;}
 .ad_1200 { display:block; }
 .video_wrapper .video > iframe {height:610px;}
 }
-
-
-
 
 
 /* 共通
