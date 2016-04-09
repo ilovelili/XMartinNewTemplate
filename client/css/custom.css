@@ -249,7 +249,12 @@ h2{ font-size:1em !important;}
 header .nav {
 	font-size:1.2em;
 }
-header .title_logo {width:219px; height:35px;}
+header .title_logo {
+	position: relative;
+	top: -3px;
+	width:219px; 
+	height:35px;
+}
 header .nav .keyword{}
 header .nav .keyword:before{
 	position:relative;

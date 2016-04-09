@@ -65,6 +65,9 @@
                 if (navi.attr('aria-expanded') === 'true') {
                     navi.click();
                 }
+
+                // scroll to top
+                window.scrollTo(0, 0);
             });
 
             // aggregate is heavy so only run once
