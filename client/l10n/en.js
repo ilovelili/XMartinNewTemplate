@@ -17,9 +17,10 @@
 	    "HOME": "Home♀",
 		"RANKING": "Popular videos",
 		"KEYWORD": "Keywords",
+		"ABOUT": "About us",
 		"POPULAR": "More poplular videos",
-		"POPULARWEEK": "More Weekly poplular videos",
-		"POPULARMONTH": "More Monthly poplular videos",
+		"POPULARWEEK": "More weekly poplular videos",
+		"POPULARMONTH": "More monthly poplular videos",
 		"POPULARFULLTIME": "More whole period poplular videos",
 		"NEWVIDEOS": "More latest videos"
 	},
