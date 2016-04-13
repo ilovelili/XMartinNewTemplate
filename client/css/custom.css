@@ -251,7 +251,7 @@ header .nav {
 }
 header .title_logo {
 	position: relative;
-	top: -3px;
+	top: -7px;
 	width:219px; 
 	height:35px;
 }
@@ -278,7 +278,7 @@ header .nav .about:before{
 	display:inline-block;
 	width:1.2em;
 	height:1.2em;
-	background-image:url(../img/keyword.svg); /*todo*/
+	background-image:url(../img/aboutus.svg);
 	background-repeat: no-repeat;
 	background-size:100%;
 }
