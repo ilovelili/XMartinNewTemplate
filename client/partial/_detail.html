@@ -1,8 +1,10 @@
 <div id="head_under" class="gridContainer clearfix">
     <!--▼メインセクション-->
     <div class="main_section">
+        <!--ad-->
+        <ad-spot></ad-spot>
         <!--▽リード-->
-        <div class="row margin-top_s">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="page-header">
                     <h1 id="type">{{video.title}}</h1>
@@ -12,7 +14,7 @@
         <!--△リード-->
         <!-- Headings -->
         <!--▼動画再生-->
-        <div class="row detail margin-top_s">
+        <div class="row detail">
             <div class="col-lg-12 padding-top_s padding-bottom_s video_wrapper">
                 <div class="video" ng-bind-html="trustedLink"></div>
                 <div class="MOV_BOX_res">
@@ -28,6 +30,8 @@
             </div>
         </div>
         <!--▲動画再生-->
+        <!--ad-->
+        <ad-spot></ad-spot>
         <!--todo: find by cat panel-->
         <div class="row">
             <div class="col-lg-12">
@@ -36,6 +40,7 @@
                 </div>
             </div>
         </div>
+        <div class="row MOV_thumb_group" ng-include="'partial/inner/_innerrepeater.html'" ng-if="videos.length"></div>
         <!--recomended videos-->
         <div class="row" ng-if="videos.length">
             <div class="col-lg-12">

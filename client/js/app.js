@@ -18,6 +18,9 @@
                 .when('/about', {
                     templateUrl: 'partial/_about.html'
                 })
+                .when('/link', {
+                    templateUrl: 'partial/_link.html'
+                })
                 .when('/keyword/:cat', {
                     templateUrl: 'partial/_keyword.html',
                 })

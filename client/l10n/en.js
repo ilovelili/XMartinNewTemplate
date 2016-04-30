@@ -18,6 +18,7 @@
 		"RANKING": "Popular videos",
 		"KEYWORD": "Keywords",
 		"ABOUT": "About us",
+		"LINK": "Link",
 		"POPULAR": "More poplular videos",
 		"POPULARWEEK": "More weekly poplular videos",
 		"POPULARMONTH": "More monthly poplular videos",

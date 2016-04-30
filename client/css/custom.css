@@ -283,6 +283,21 @@ header .nav .about:before{
 	background-size:100%;
 }
 
+header .nav .link{}
+header .nav .link:before{
+	position:relative;
+	top:4px;
+	left:-3px;
+	content:"";
+	display:inline-block;
+	width:1.2em;
+	height:1.2em;
+	background-image:url(../img/aboutus.svg);
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+
+
 .mov_thumb {
     position: relative;
     padding-bottom: 75%;
@@ -405,7 +420,7 @@ p.desc { margin:1em 0px; }
 	text-align:center;
 }
 .margin-top_s {
-	margin-top:1em;
+	/*margin-top:1em;*/
 }
 .margin-bottom_s {
 	margin-bottom:1em;
