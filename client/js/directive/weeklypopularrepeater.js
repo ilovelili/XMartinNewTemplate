@@ -7,7 +7,10 @@
     function WeeklyPopularVideoRepeaterDirectiveFunc(MongoService, DateService) {
         return {
             restrict: 'E',
-            templateUrl: 'partial/_weeklypopularrepeater.html',
+            templateUrl: 'partial/_weeklypopularrepeater.html',            
+            scope: {
+                limit: '=',
+            },
             // or directive controller?
             link: function (scope, elements, attributes) {
                 MongoService.getWeeklyPopularById().then(function (videos) {
@@ -24,8 +27,6 @@
                     });
 
                     scope.weeklypopularvideos = videos;
-                    // init
-                    scope.limit = 14;
                     scope.extendLimit = function (event) {
                         scope.limit += 8;
                         event.preventDefault();
