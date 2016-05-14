@@ -1,3 +1,15 @@
 db.videos.createIndex({"title":1}, {unique:true,dropDups:true});
 db.videos.createIndex({"date":-1}, {unique:false});
 db.videos.createIndex({"click":-1}, {unique:false});
+
+db.weeklyPopularVideos.createIndex({"title":1}, {unique:true,dropDups:true});
+db.weeklyPopularVideos.createIndex({"date":-1}, {unique:false});
+db.weeklyPopularVideos.createIndex({"click":-1}, {unique:false});
+
+db.monthlyPopularVideos.createIndex({"title":1}, {unique:true,dropDups:true});
+db.monthlyPopularVideos.createIndex({"date":-1}, {unique:false});
+db.monthlyPopularVideos.createIndex({"click":-1}, {unique:false});
+
+db.fulltimePopularVideos.createIndex({"title":1}, {unique:true,dropDups:true});
+db.fulltimePopularVideos.createIndex({"date":-1}, {unique:false});
+db.fulltimePopularVideos.createIndex({"click":-1}, {unique:false});

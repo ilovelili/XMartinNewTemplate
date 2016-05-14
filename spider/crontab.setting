@@ -1,2 +1,3 @@
 # use this crontab setting
-10 */3 * * * cd /home/min/Projects/xmartin/spider && /bin/sh task.sh 1> /tmp/cron.txt 2> /tmp/cron.err # JOB_ID_1
+10 */3 * * * cd /home/min/Projects/xmartin/spider && /bin/sh task.sh 1> /tmp/cron.txt 2> /tmp/cron.err # Videos spider
+11 11 * * * cd /home/min/Projects/xmartin/popularspider && /bin/sh task.sh 1> /tmp/cron2.txt 2> /tmp/cron2.err # Popular videos spider
