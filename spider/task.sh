@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "resourcecollector starts"
-bash resourcecollector.sh
+/bin/sh ./resourcecollector.sh
 echo "resourcecollector ends"
 
 echo "resourceshrinker starts"
-bash resourceshrinker.sh
+/bin/sh ./resourceshrinker.sh
 echo "resourceshrinker ends"

@@ -1,0 +1,2 @@
+# use this crontab setting
+10 */3 * * * cd /home/min/Projects/xmartin/spider && /bin/sh task.sh 1> /tmp/cron.txt 2> /tmp/cron.err # JOB_ID_1
