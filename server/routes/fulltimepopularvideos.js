@@ -18,7 +18,7 @@ exports.findById = function(req, res) {
     console.log('findById: ' + id);
     MongoClient.connect(url, function(err, db) {
         if (!err) {
-            var col = db.collection('monthlyPopularVideos');
+            var col = db.collection('fulltimePopularVideos');
             col.findOne({
                 _id: new ObjectId(id),
                 enabled: true,
@@ -32,33 +32,11 @@ exports.findById = function(req, res) {
     });
 };
 
-exports.findByCat = function(req, res) {
-    'use strict';
-    var cat = req.params.cat;
-    console.log('findByCat: ' + cat);
-
-    MongoClient.connect(url, function(err, db) {
-        if (!err) {
-            var col = db.collection('monthlyPopularVideos');
-            col.find({
-                category: cat,
-                enabled: true,
-                date: { $gte: startDate },
-            }).toArray(function(err, docs) {
-                if (!err) {
-                    res.jsonp(docs);
-                }
-                db.close();
-            });
-        }
-    });
-};
-
 exports.findAll = function(req, res) {
     'use strict';
     MongoClient.connect(url, function(err, db) {
         if (!err) {
-            var col = db.collection('monthlyPopularVideos');
+            var col = db.collection('fulltimePopularVideos');
             // find created in one year
             col.find({
                 enabled: true,

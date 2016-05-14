@@ -1,9 +1,9 @@
 var express = require('express'),
     path = require('path'),
     videos = require('./routes/videos'),
-    weeklyPopularvideos = require('./routes/weeklypopularvideos'),
-    monthlyPopularvideos = require('./routes/monthlypopularvideos'),
-    fulltimePopularvideos = require('./routes/fulltimepopularvideos'),
+    weeklypopularvideos = require('./routes/weeklypopularvideos'),
+    monthlypopularvideos = require('./routes/monthlypopularvideos'),
+    fulltimepopularvideos = require('./routes/fulltimepopularvideos'),
     host = process.env.HOST || '188.166.244.244',    
     port = process.env.PORT || 3000;
 
@@ -31,17 +31,14 @@ app.get('/aggregateCat/', videos.aggregateCat);
 app.get('/videos', videos.findAll);
 
 // popular videos
-app.get('/weeklyPopularvideos/:id', weeklyPopularvideos.findById);
-app.get('/weeklyPopularvideos/cat/:cat', weeklyPopularvideos.findByCat);
-app.get('/weeklyPopularvideos', weeklyPopularvideos.findAll);
+app.get('/weeklypopularvideos/:id', weeklypopularvideos.findById);
+app.get('/weeklypopularvideos', weeklypopularvideos.findAll);
 
-app.get('/monthlyPopularvideos/:id', monthlyPopularvideos.findById);
-app.get('/monthlyPopularvideos/cat/:cat', monthlyPopularvideos.findByCat);
-app.get('/monthlyPopularvideos', monthlyPopularvideos.findAll);
+app.get('/monthlypopularvideos/:id', monthlypopularvideos.findById);
+app.get('/monthlypopularvideos', monthlypopularvideos.findAll);
 
-app.get('/fulltimePopularvideos/:id', fulltimePopularvideos.findById);
-app.get('/fulltimePopularvideos/cat/:cat', fulltimePopularvideos.findByCat);
-app.get('/fulltimePopularvideos', fulltimePopularvideos.findAll);
+app.get('/fulltimepopularvideos/:id', fulltimepopularvideos.findById);
+app.get('/fulltimepopularvideos', fulltimepopularvideos.findAll);
 
 app.listen(port, host);
 console.log('Listening on {0}:{1}'.replace('{0}', host).replace('{1}', port));

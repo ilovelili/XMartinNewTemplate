@@ -11,5 +11,8 @@
         'eroMartin.nativeAdSpotDirective',
         'eroMartin.keywordRepeaterDirective',
         'eroMartin.keywordListDirective',
+        'eroMartin.weeklyPopularVideoRepeaterDirective',
+        'eroMartin.monthlyPopularVideoRepeaterDirective',
+        'eroMartin.fulltimePopularVideoRepeaterDirective',
     ]);
 })(window.angular);
