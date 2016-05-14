@@ -18,7 +18,7 @@
                 }
 
                 scope.extendLimit = function(event) {
-                    scope.limit += 16;
+                    scope.limit += 16;                    
                     event.preventDefault();
                 };
                 scope.overCap = function(event) {

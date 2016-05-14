@@ -9,7 +9,7 @@
             restrict: 'E',
             templateUrl: 'partial/_weeklypopularrepeater.html',            
             scope: {
-                limit: '=',
+                weeklyinfolimit: '=',
             },
             // or directive controller?
             link: function (scope, elements, attributes) {
@@ -25,8 +25,7 @@
                                 title: video.title.substring(0, 24) + '...'
                             });
                     });
-
-                    scope.weeklypopularvideos = videos;
+                    scope.videos = videos;
                     scope.extendLimit = function (event) {
                         scope.limit += 8;
                         event.preventDefault();
