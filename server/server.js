@@ -1,6 +1,9 @@
 var express = require('express'),
     path = require('path'),
     videos = require('./routes/videos'),
+    weeklyPopularvideos = require('./routes/weeklypopularvideos'),
+    monthlyPopularvideos = require('./routes/monthlypopularvideos'),
+    fulltimePopularvideos = require('./routes/fulltimepopularvideos'),
     host = process.env.HOST || '188.166.244.244',    
     port = process.env.PORT || 3000;
 
@@ -26,6 +29,19 @@ app.get('/videos/cat/:cat', videos.findByCat);
 app.get('/aggregateCat/', videos.aggregateCat);
 // app.get('/videos/date/:date', videos.findByDate);
 app.get('/videos', videos.findAll);
+
+// popular videos
+app.get('/weeklyPopularvideos/:id', weeklyPopularvideos.findById);
+app.get('/weeklyPopularvideos/cat/:cat', weeklyPopularvideos.findByCat);
+app.get('/weeklyPopularvideos', weeklyPopularvideos.findAll);
+
+app.get('/monthlyPopularvideos/:id', monthlyPopularvideos.findById);
+app.get('/monthlyPopularvideos/cat/:cat', monthlyPopularvideos.findByCat);
+app.get('/monthlyPopularvideos', monthlyPopularvideos.findAll);
+
+app.get('/fulltimePopularvideos/:id', fulltimePopularvideos.findById);
+app.get('/fulltimePopularvideos/cat/:cat', fulltimePopularvideos.findByCat);
+app.get('/fulltimePopularvideos', fulltimePopularvideos.findAll);
 
 app.listen(port, host);
 console.log('Listening on {0}:{1}'.replace('{0}', host).replace('{1}', port));
