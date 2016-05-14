@@ -64,7 +64,7 @@ casper.saveToCSV = function() {
     }
     if (result.length > 0) {
         // workingDirectory is defined by phantomjs, use process.cwd() in nodejs
-        fs.write(fs.pathJoin('/home/min/Projects/xmartin/spider/output', filename), result, 'w');
+        fs.write(fs.pathJoin(fs.workingDirectory, 'output', filename), result, 'w');
     }
 };
 
