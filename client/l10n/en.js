@@ -35,5 +35,8 @@
     },
     "footer": {
         "ABOUT": "ero-hotel.jp is a free porn videos website."
-    }
+    },
+	"desc": {
+		"SEARCH": "Please select the keywords."
+	}
 }
