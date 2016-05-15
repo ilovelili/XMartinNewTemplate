@@ -1,13 +1,13 @@
 <div class="col-sm-3 MOV_thumb_container" ng-repeat="video in videos | orderBy: '-date' | limitTo: limit">
     <div class="bs-component MOV_thumb_box">
         <div class="mov_thumb">
-            <a ng-click="go('/video/' + video._id)">
+            <a ng-click="go(pathPattern + video._id)">
                 <img ng-src="{{video.thumbnail}}" />
             </a>
             <span class="time">{{video.duration}}</span>
         </div>
         <div class="MOV_BOX_res">
-            <h2><a class="title" ng-click="go('/video/' + video._id)">{{video.title}}</a></h2>
+            <h2><a class="title" ng-click="go(pathPattern + video._id)">{{video.title}}</a></h2>
             <p class="keyword">
                 <span ng-repeat="cat in video.category track by $index" ng-if="cat">
                 <a ng-click="go('/keyword/{{cat}}')" class="btn btn-default btn-xs round-corner">{{cat}}</a>
@@ -20,5 +20,5 @@
     </div>
 </div>
 <!--▽AD-->
-<native-ad-spot videos="videos"></native-ad-spot>
+<native-ad-spot></native-ad-spot>
 <!--▽AD-->

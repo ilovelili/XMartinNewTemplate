@@ -1,14 +1,13 @@
-(function(angular) {
+(function (angular) {
     'use strict';
 
     var app = angular.module('eroMartin.controllers', []);
-
     app.controller('VideoDetailCtrl', VideoDetailCtrl);
-    VideoDetailCtrl.$inject = ['$scope', '$routeParams', '$sce', '$window', '$timeout', 'MongoService', 'DateService'];
+    VideoDetailCtrl.$inject = ['$scope', '$sce', '$window', '$timeout', 'MongoService', 'DateService', 'UseragentService', 'query'];
 })(window.angular);
 
-function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoService, DateService) {
-    MongoService.getById($routeParams.id).then(function(video) {
+function VideoDetailCtrl($scope, $sce, $window, $timeout, MongoService, DateService, UseragentService, query) {
+    query().then(function (video) {
         angular.extend(video, {
             date: DateService.formatDate(video.date)
         });
@@ -17,7 +16,7 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoSer
         resloveIframeResponsive($scope, $sce, $timeout);
 
         // register onresize event
-        angular.element($window).bind('resize', function() {
+        angular.element($window).bind('resize', function () {
             resloveIframeResponsive($scope, $sce, $timeout);
             // manuall $digest required as resize event
             // is outside of angular
@@ -25,13 +24,13 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoSer
         });
     });
 
-    $scope.$watch('video', function(newvalue, oldvalue, scope) {
+    $scope.$watch('video', function (newvalue, oldvalue, scope) {
         if (newvalue && newvalue != oldvalue) {
             var cats = scope.video.category;
             scope.videos = [];
-            angular.forEach(cats, function(cat) {
-                MongoService.getByCat(cat).then(function(videos) {
-                    videos.map(function(video) {
+            angular.forEach(cats, function (cat) {
+                MongoService.getByCat(cat).then(function (videos) {
+                    videos.map(function (video) {
                         angular.extend(video, {
                             date: DateService.formatDate(video.date)
                         });
@@ -46,8 +45,8 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoSer
                     scope.videos = scope.videos.concat(videos);
                     // remove duplicate by _id (consider use filter) and need check performance issue
                     var result = [];
-                    angular.forEach(scope.videos, function(video) {
-                        var ids = result.map(function(item) {
+                    angular.forEach(scope.videos, function (video) {
+                        var ids = result.map(function (item) {
                             return item._id;
                         });
 
@@ -57,6 +56,7 @@ function VideoDetailCtrl($scope, $routeParams, $sce, $window, $timeout, MongoSer
                     });
 
                     scope.videos = result;
+                    scope.limit = scope.limit || (UseragentService.isPC ? 15 : 14);
                 });
             });
         }
@@ -72,7 +72,7 @@ function resloveIframeResponsive($scope, $sce, $timeout) {
     $scope.trustedLink = $sce.trustAsHtml(responsiveLink);
 
     // iframe css
-    $timeout(function() {
+    $timeout(function () {
         var iframe = $(".video_wrapper .video iframe");
         if (iframe) {
             iframe.addClass('player');

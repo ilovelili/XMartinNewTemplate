@@ -2,36 +2,34 @@
     'use strict';
     angular.module('eroMartin.weeklyPopularVideoRepeaterDirective', []).directive('weeklyPopularVideoRepeater', WeeklyPopularVideoRepeaterDirectiveFunc);
 
-    WeeklyPopularVideoRepeaterDirectiveFunc.$inject = ['MongoService', 'DateService'];
+    WeeklyPopularVideoRepeaterDirectiveFunc.$inject = ['MongoService'];
 
-    function WeeklyPopularVideoRepeaterDirectiveFunc(MongoService, DateService) {
+    function WeeklyPopularVideoRepeaterDirectiveFunc(MongoService) {
         return {
             restrict: 'E',
-            templateUrl: 'partial/_weeklypopularrepeater.html',            
-            scope: {
-                weeklyinfolimit: '=',
-            },
-            // or directive controller?
+            templateUrl: 'partial/_weeklypopularrepeater.html',
             link: function (scope, elements, attributes) {
-                MongoService.getWeeklyPopularById().then(function (videos) {
-                    videos.map(function (video) {
-                        angular.extend(video, {
-                            date: DateService.formatDate(video.date)
-                        });
+                scope.query = MongoService.getWeeklyPopularById();
+            },
+        };
+    }
+})(window.angular);
 
-                        // stupid hack
-                        if (video.title.length > 24)
-                            angular.extend(video, {
-                                title: video.title.substring(0, 24) + '...'
-                            });
-                    });
-                    scope.videos = videos;
-                    scope.extendLimit = function (event) {
-                        scope.limit += 8;
-                        event.preventDefault();
-                    };
-                });
-            }
+
+(function (angular) {
+    'use strict';
+    angular.module('eroMartin.weeklyPopularVideoRepeaterHomepageDirective', []).directive('weeklyPopularVideoHomepageRepeater', WeeklyPopularVideoHomepageRepeaterDirectiveFunc);
+
+    WeeklyPopularVideoHomepageRepeaterDirectiveFunc.$inject = ['MongoService'];
+
+    function WeeklyPopularVideoHomepageRepeaterDirectiveFunc(MongoService) {
+        return {
+            restrict: 'E',
+            templateUrl: 'partial/_weeklypopularhomepagerepeater.html',
+            scope: true,
+            link: function (scope, elements, attributes) {
+                scope.query = MongoService.getWeeklyPopularById();
+            },
         };
     }
 })(window.angular);
