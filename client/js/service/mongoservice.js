@@ -29,14 +29,14 @@
 
                         return $resource(server + '/weeklypopularvideos/:id', {}).query().$promise;
                     },
-                    getMonthlyPopularById: function (cat) {
+                    getMonthlyPopularById: function (id) {
                         if (id) {
                             return $resource(server + '/monthlypopularvideos/:id', { id: id }).get().$promise;
                         }
 
                         return $resource(server + '/monthlypopularvideos/:id', {}).query().$promise;
                     },
-                    getFulltimePopularById: function (cat) {
+                    getFulltimePopularById: function (id) {
                         if (id) {
                             return $resource(server + '/fulltimepopularvideos/:id', { id: id }).get().$promise;
                         }

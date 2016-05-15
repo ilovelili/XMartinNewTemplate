@@ -27,6 +27,15 @@
             .when('/keyword', {
                 templateUrl: 'partial/_keywords.html'
             })
+            .when('/weeklypopular', {
+                templateUrl: 'partial/_weeklypopulars.html'
+            })
+            .when('/monthlypopular', {
+                templateUrl: 'partial/_monthlypopulars.html'
+            })
+            .when('/fulltimepopular', {
+                templateUrl: 'partial/_fulltimepopulars.html'
+            })
             .when('/video/:id', {
                 templateUrl: 'partial/_detail.html',
                 controller: 'VideoDetailCtrl',

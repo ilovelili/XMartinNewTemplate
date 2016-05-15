@@ -19,10 +19,10 @@
 		"KEYWORD": "キーワード",		
 		"ABOUT": "このサイトについて",
 		"LINK": "相互リンク",
-		"POPULAR": "人気動画一覧へ",
-		"POPULARWEEK": "週間人気動画一覧へ",
-		"POPULARMONTH": "月間人気動画一覧へ",
-		"POPULARFULLTIME": "全期間人気動画一覧へ",
+		"POPULAR": "人気動画",
+		"POPULARWEEKLY": "週間",
+		"POPULARMONTHLY": "月間",
+		"POPULARFULLTIME": "全期間",
 		"NEWVIDEOS": "新着動画一覧へ"
 	},
     "detail": {

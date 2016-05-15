@@ -19,10 +19,10 @@
 		"KEYWORD": "Keywords",
 		"ABOUT": "About us",
 		"LINK": "Link",
-		"POPULAR": "More poplular videos",
-		"POPULARWEEK": "More weekly poplular videos",
-		"POPULARMONTH": "More monthly poplular videos",
-		"POPULARFULLTIME": "More whole period poplular videos",
+		"POPULAR": "Best videos",
+		"POPULARWEEKLY": "Weekly",
+		"POPULARMONTHLY": "Monthly",
+		"POPULARFULLTIME": "Whole period",
 		"NEWVIDEOS": "More latest videos"
 	},
     "detail": {
