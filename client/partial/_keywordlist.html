@@ -8,7 +8,7 @@
     <div class="col-sm-12">
         <div class="checkbox">
             <!--todo ng-class btn-xs btn-sm...-->
-            <label class="btn btn-default" ng-repeat="cat in aggregateCats | limitTo: limit" ng-if="cat.name">
+            <label class="btn btn-default" ng-repeat="cat in aggregateCats | limitTo: catlimit" ng-if="cat.name">
                 <input type="checkbox" ng-click="setupSearchCriteria($event, cat.name)"> {{cat.name}}
             </label>
         </div>

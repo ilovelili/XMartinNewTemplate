@@ -86,7 +86,7 @@
             }
         ])
         // rootscope register
-        .run(['$rootScope', '$window', '$location', 'MongoService', function ($rootScope, $window, $location, MongoService) {
+        .run(['$rootScope', '$window', '$location', 'MongoService', 'UseragentService', function ($rootScope, $window, $location, MongoService, UseragentService) {
             $rootScope.back = function () {
                 $window.history.back();
             };
@@ -95,6 +95,8 @@
             $rootScope.go = function (path) {
                 $location.url(path);
             };
+            
+            $rootScope.isPC = UseragentService.isPC;
 
             $rootScope.$on('$routeChangeSuccess', function (newVal, oldVal) {
                 // hack: init navi bar

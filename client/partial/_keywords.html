@@ -3,7 +3,7 @@
     <!--▼メインセクション-->
     <div class="main_section">
         <!--ad-->
-        <ad-spot></ad-spot>
+        <ad-spot ng-if="isPC"></ad-spot>
         <!--▽リード-->
         <div class="row ranking_switch_week_title">
             <div class="col-lg-12">
@@ -12,8 +12,7 @@
                 </div>
             </div>
         </div>
-        <keyword-list></keyword-list>
-        <ad-spot></ad-spot>
+        <keyword-list></keyword-list>        
     </div>
     <side-menu></side-menu>
     <div class="clear" style="height:50px;"></div>
