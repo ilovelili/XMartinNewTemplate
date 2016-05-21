@@ -98,25 +98,9 @@
         .run(['$rootScope', '$window', '$location', 'MongoService', 'UseragentService', function ($rootScope, $window, $location, MongoService, UseragentService) {
             $rootScope.back = function () {
                 $window.history.back();
-            };
-                          
-            scope.resloveHref = function (id) {
-                var pathPattern = function () {
-                    switch (scope.domain) {
-                        case 'newcoming':
-                            return '/video/';
-                        case 'weeklypopular':
-                            return '/weeklypopularvideo/';
-                        case 'monthlypopular':
-                            return '/monthlypopularvideo/';
-                        case 'fulltimepopular':
-                            return '/fulltimepopularvideo/';
-                        default:
-                            return '/video/';
-                    }
-                } ();
-
-                return '/#' + pathPattern + id;
+            };                          
+            $rootScope.resloveHref = function (id) {
+                return '/#/video/' + id;
             };         
             $rootScope.isPC = UseragentService.isPC;
 
