@@ -98,6 +98,9 @@ h2{ font-size:1em !important;}
 	height:3.1em;
 	margin-bottom:0px;
 }
+.more_videos {
+	margin:16px auto 18px ;
+}
 
 .content_list_more [class*="col"] .MOV_thumb_box {
 }
@@ -269,6 +272,20 @@ header .nav .keyword:before{
 	background-size:100%;
 }
 
+header .nav .popular{}
+header .nav .popular:before{
+	position:relative;
+	top:4px;
+	left:-3px;
+	content:"";
+	display:inline-block;
+	width:1.2em;
+	height:1.2em;
+	background-image:url(../img/popular.svg);
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+
 header .nav .about{}
 header .nav .about:before{
 	position:relative;
@@ -292,7 +309,7 @@ header .nav .link:before{
 	display:inline-block;
 	width:1.2em;
 	height:1.2em;
-	background-image:url(../img/aboutus.svg);
+	background-image:url(../img/link.svg);
 	background-repeat: no-repeat;
 	background-size:100%;
 }
@@ -372,6 +389,11 @@ header .nav .link:before{
 	border-radius:2px;
 	box-sizing:border-box;
 }
+.more_videos a.btn-block{
+	width:98%;
+	margin-left:auto;
+	margin-right:auto;
+}
 
 
 .form-group .checkbox { line-height:4em;}
@@ -414,7 +436,7 @@ p.desc { margin:1em 0px; }
 
 .more_gdj > .adv {
     display: table;
-    margin: 8px auto 2px;
+    margin: 0px auto 10px;
 }
 #footer {
 	text-align:center;
