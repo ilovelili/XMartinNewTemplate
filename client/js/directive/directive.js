@@ -15,5 +15,6 @@
         'eroMartin.weeklyPopularVideoRepeaterHomepageDirective',
         'eroMartin.monthlyPopularVideoRepeaterDirective',
         'eroMartin.fulltimePopularVideoRepeaterDirective',
+        'eroMartin.advertisementDirective'
     ]);
 })(window.angular);
