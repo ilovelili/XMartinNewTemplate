@@ -99,8 +99,25 @@
             $rootScope.back = function () {
                 $window.history.back();
             };
-            
-            $rootScope.pathPattern = '/video/';            
+                          
+            scope.resloveHref = function (id) {
+                var pathPattern = function () {
+                    switch (scope.domain) {
+                        case 'newcoming':
+                            return '/video/';
+                        case 'weeklypopular':
+                            return '/weeklypopularvideo/';
+                        case 'monthlypopular':
+                            return '/monthlypopularvideo/';
+                        case 'fulltimepopular':
+                            return '/fulltimepopularvideo/';
+                        default:
+                            return '/video/';
+                    }
+                } ();
+
+                return '/#' + pathPattern + id;
+            };         
             $rootScope.isPC = UseragentService.isPC;
 
             $rootScope.$on('$routeChangeSuccess', function (newVal, oldVal) {
