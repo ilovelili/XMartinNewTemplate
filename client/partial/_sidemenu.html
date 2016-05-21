@@ -15,9 +15,9 @@
         <!--△サイドバーリード-->
         <div class="side_menu_box_border">
             <li class="side_menu_List" ng-repeat="cat in aggregateCats | limitTo: limit" ng-if="cat.name">
-                <a ng-click="go('/keyword/{{cat.name}}')">{{cat.name}}</a>
+                <a ng-href="/#/keyword/{{cat.name}}">{{cat.name}}</a>
             </li>
-            <li class="side_menu_List"><a ng-click="go('/keyword')" translate="list.KEYWORDLIST">&gt;キーワード一覧</a></li>
+            <li class="side_menu_List"><a ng-href="/#/keyword" translate="list.KEYWORDLIST">&gt;キーワード一覧</a></li>
         </div>
     </div>
 </div>

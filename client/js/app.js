@@ -100,11 +100,7 @@
                 $window.history.back();
             };
             
-            $rootScope.pathPattern = '/video/';
-            $rootScope.go = function (path) {
-                $location.url(path);
-            };
-            
+            $rootScope.pathPattern = '/video/';            
             $rootScope.isPC = UseragentService.isPC;
 
             $rootScope.$on('$routeChangeSuccess', function (newVal, oldVal) {

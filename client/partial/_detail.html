@@ -22,7 +22,7 @@
                     <br />
                     <p class="keyword">
                         <span ng-repeat="cat in video.category track by $index" ng-if="cat">
-                            <a class="btn btn-default btn-xs round-corner" ng-click="go('/keyword/{{cat}}')">{{cat}}</a>
+                            <a class="btn btn-default btn-xs round-corner" ng-href="/#/keyword/{{cat}}">{{cat}}</a>
                         </span>
                     </p>
                     <p class="date"><span translate="detail.UPDATETIME">更新日時</span>: {{video.date}}</p>
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="bs-component">
-                    <a ng-click="go('/popular')" class="btn btn-primary btn-block" translate="navi.NEWVIDEOS">新着動画一覧</a>
+                    <a ng-href="/#/popular" class="btn btn-primary btn-block" translate="navi.NEWVIDEOS">新着動画一覧</a>
                 </div>
             </div>
         </div>

@@ -31,22 +31,23 @@
                         });
 
                         scope.videos = videos;
-                        scope.pathPattern = (function () {
-                            switch (scope.domain) {
-                                case 'newcoming':
-                                    return '/video/';
-                                case 'weeklypopular':
-                                    return '/weeklypopularvideo/';
-                                case 'monthlypopular':
-                                    return '/monthlypopularvideo/';
-                                case 'fulltimepopular':
-                                    return '/fulltimepopularvideo/';
-                                default:
-                                    return '/video/';
-                            }
-                        })();
-                        scope.go = function (path) {
-                            $location.url(path);
+                        scope.resloveHref = function (id) {                            
+                                var pathPattern = function () {
+                                    switch (scope.domain) {
+                                        case 'newcoming':
+                                            return '/video/';
+                                        case 'weeklypopular':
+                                            return '/weeklypopularvideo/';
+                                        case 'monthlypopular':
+                                            return '/monthlypopularvideo/';
+                                        case 'fulltimepopular':
+                                            return '/fulltimepopularvideo/';
+                                        default:
+                                            return '/video/';
+                                    }
+                                } ();
+
+                            return '/#' + pathPattern + id;
                         };
                     });
                 }, 0);
