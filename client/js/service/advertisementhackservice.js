@@ -11,6 +11,16 @@
                         'marginLeft': marginLeft + 'px',
                     });
                 },
+                hackNativeIframe: function (iframe, scale) {
+                    var marginLeft = iframe.width() * ((1 - scale) / 2 * -1),
+                        marginTop = iframe.height() * ((1 - scale) / 2 * -1);
+
+                    iframe.css({
+                        'transform': 'scale(' + scale + ')',
+                        'marginLeft': marginLeft + 'px',
+                        'marginTop': marginTop + 'px',
+                    });
+                },
             };
         });
 })(window.angular);
