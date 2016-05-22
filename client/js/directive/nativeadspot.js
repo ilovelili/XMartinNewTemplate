@@ -10,7 +10,7 @@
             // use parent scope
             scope: false,
             link: function (scope) {
-                scope.limit = scope.limit || (UseragentService.isPC ? 15 : 14);
+                scope.limit = scope.limit || /*(UseragentService.isPC ? 15 : 14)*/15;
                 scope.extendLimit = scope.extendLimit || function (event) {
                     scope.limit += 8;
                     event.preventDefault();
