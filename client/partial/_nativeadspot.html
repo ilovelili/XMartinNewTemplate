@@ -1,19 +1,21 @@
-<div class="col-sm-3 MOV_thumb_container">
-    <div class="bs-component more_gdj MOV_thumb_box" style="margin-left: 0">
+<!--<div class="col-sm-3 MOV_thumb_container">-->
+<div class="col-sm-3">
+    <div class="bs-component more_gdj MOV_thumb_box">
         <div class="adv">
             <!-- 広告は画面サイズでclassを切り替えている。classで実行されているのはdisplayをnone blockの違いだけ。 スマホad_1 タブレットad_768 ノートPC ad_992 デスクトップPC ad_1200 -->
             <a href="/" class="ad_1">
                 <div class="centering"><img src="/img/test/ad_creative_300-250.gif" /></div>
             </a>
             <a href="#" class="ad_768"><img src="img/test/ad_creative_300-250.gif" alt="" /></a>
-            <a href="#" class="ad_992"><maist200x200-hack992></maist200x200-hack992></a>
-            <a href="#" class="ad_1200"><maist200x200></maist200x200></a>
+            <a href="#" class="ad_992">
+                <maist200x200-hack992></maist200x200-hack992>
+            </a>
+            <a href="#" class="ad_1200">
+                <maist200x200></maist200x200>
+            </a>
         </div>
         <div class="more_videos">
-            <a translate="list.MOREREAD" class="ad_1 btn btn-primary btn-lg btn-block arrow_down showmorenative" ng-hide="overCap($event)" ng-click="extendLimit($event)">もっと見る</a>
-            <a translate="list.MOREREAD" class="ad_768 btn btn-primary btn-lg btn-block arrow_down showmorenative" ng-hide="overCap($event)" ng-click="extendLimit($event)">もっと見る</a>
-            <a translate="list.MOREREAD" class="ad_992 btn btn-primary btn-lg btn-block arrow_down showmorenative" ng-hide="overCap($event)" ng-click="extendLimit($event)">もっと見る</a>
-            <a translate="list.MOREREAD" class="ad_1200 btn btn-primary btn-lg btn-block arrow_down showmorenative" ng-hide="overCap($event)" ng-click="extendLimit($event)">もっと見る</a>
+            <a translate="list.MOREREAD" class="btn-primary btn-lg btn-block arrow_down" ng-hide="overCap($event)" ng-click="extendLimit($event)">もっと見る</a>
         </div>
     </div>
 </div>

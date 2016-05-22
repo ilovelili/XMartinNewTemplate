@@ -29,7 +29,10 @@
                 };
                 scope.search = function () {
                     scope.videos = [];
+                    if (!searchCriteria.length) return;
 
+                    // there is searchCriteria, in other words, there is data
+                    scope.searchClicked = true;
                     angular.forEach(searchCriteria, function (cat, index) {
                         MongoService.getByCat(cat).then(function (videos) {
                             videos.map(function (video) {
@@ -62,13 +65,19 @@
                     });
 
                     searchCriteria = [];
-                    scope.searchClicked = true;
-
+                    // UI
                     var keywordsLabel = $(".form-group .checkbox label");
                     if (keywordsLabel) {
                         keywordsLabel.removeClass('btn-info');
                         keywordsLabel.addClass('btn-default');
                     }
+
+                    $timeout(function () {
+                        // scroll                  
+                        $('html,body').animate({
+                            scrollTop: $(".searchresultposition").offset().top,
+                        }, 'slow');
+                    }, 100);
                 };
 
                 $timeout(function () {
