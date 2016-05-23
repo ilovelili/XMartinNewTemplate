@@ -5,8 +5,9 @@
 
     function NativeAdSpotFunc(UseragentService) {
         return {
-            restrict: 'E',
+            restrict: 'E',            
             templateUrl: 'partial/_nativeadspot.html',
+            replace: true,
             // use parent scope
             scope: false,
             link: function (scope) {
