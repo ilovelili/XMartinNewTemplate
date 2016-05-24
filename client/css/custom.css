@@ -476,3 +476,7 @@ p.desc { margin:1em 0px; }
 .smaller {
 	font-size: smaller;
 }
+
+.left-15 {
+	margin-left: 15px;
+}

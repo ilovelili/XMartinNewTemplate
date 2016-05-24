@@ -11,12 +11,12 @@
                         'marginLeft': marginLeft + 'px',
                     });
                 },
-                hackNativeIframe: function (iframe, scale) {
-                    var marginLeft = iframe.width() * ((1 - scale) / 2 * -1),
-                        marginTop = iframe.height() * ((1 - scale) / 2 * -1);
+                hackNativeIframe: function (iframe, scaleX, scaleY) {
+                    var marginLeft = iframe.width() * ((1 - scaleX) / 2 * -1),
+                        marginTop = iframe.height() * ((1 - scaleY) / 2 * -1);
 
                     iframe.css({
-                        'transform': 'scale(' + scale + ')',
+                        'transform': 'scale(' + scaleX + ',' + scaleY + ')',
                         'marginLeft': marginLeft + 'px',
                         'marginTop': marginTop + 'px',
                     });
