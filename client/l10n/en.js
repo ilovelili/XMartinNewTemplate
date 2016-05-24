@@ -9,7 +9,7 @@
 		"SIDERECOMMEND": "Recommanded",
 		"KEYWORDLIST": " More keywords",
 		"POPULARKEYWORD": "Popular keywords",
-		"MOREREAD": "More videos",
+		"MOREREAD": "More!",
 		"SEARCH": "Search",
 		"RESULT": "Result"
 	},
