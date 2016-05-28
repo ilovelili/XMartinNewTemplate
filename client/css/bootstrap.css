@@ -246,7 +246,7 @@ th {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    /*width: 750px;*/
   }
 }
 @media (min-width: 992px) {
@@ -2858,7 +2858,7 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    /*width: 750px;*/
   }
 }
 @media (min-width: 992px) {
@@ -4915,7 +4915,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.33;
   border-radius: 4px;
 }
