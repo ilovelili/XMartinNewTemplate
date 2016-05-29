@@ -28,7 +28,7 @@
                     
                     more_btn.css({
                         'marginTop': marginTop + 'px',
-                    })
+                    });
                 },
             };
         });

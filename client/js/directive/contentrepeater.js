@@ -7,7 +7,7 @@
     function ContentRepeaterDirectiveFunc(DateService, UseragentService, $location, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'partial/inner/_contentrepeater.html',
+            templateUrl: 'partial/inner/_contentrepeater.html',            
             scope: {
                 query: '&',
                 limit: '=',
