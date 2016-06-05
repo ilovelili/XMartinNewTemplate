@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-<url>
-  <loc>http://ero-hotel.jp/</loc>
-  <lastmod>2016-05-22T03:14:35+00:00</lastmod>
-  <changefreq>daily</changefreq>
-</url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/home</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/keyword</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/weeklypopular</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/monthlypopular</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/fulltimepopular</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/about</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>http://ero-hotel.jp/#!/link</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
 </urlset>
