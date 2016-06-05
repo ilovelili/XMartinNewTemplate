@@ -22,7 +22,6 @@ var resloveDate = function(rawDate) {
 };
 
 var resloveCats = function(rawCats) {
-    debugger;
     console.log('rawCats:' + rawCats);
 
     return rawCats
@@ -103,7 +102,7 @@ MongoClient.connect(url, function(err, db) {
                     console.error(err);
                 }
                 db.close();
-                unlinkFiles();
+                // unlinkFiles();
             });
     }
 });
