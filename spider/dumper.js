@@ -102,7 +102,7 @@ MongoClient.connect(url, function(err, db) {
                     console.error(err);
                 }
                 db.close();
-                // unlinkFiles();
+                unlinkFiles();
             });
     }
 });
