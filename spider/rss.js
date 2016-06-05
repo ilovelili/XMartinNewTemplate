@@ -9,13 +9,13 @@ var RSS = require('rss'),
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
     ObjectId = require('mongodb').ObjectID;
 
-var resolveUrl = function (item) {
-    return 'http://ero-hotel.jp/#!/video/' + item._id;
+var resloveItemDesciption = function (item) {
+    return '<img width="218.83" height="164.11" src="' + item.thumbnail + '" />' +
+        '<p>' + item.title + '</p>';
 };
 
-var resloveItemDesciption = function (item) {
-    return '<a href="' + resolveUrl(item) + '">' + '<img width="218.83" height="164.11" src="' + item.thumbnail + '" /></a>' +
-        '<p>' + item.title + '</p>';
+var resolveUrl = function (item) {
+    return 'http://ero-hotel.jp/#!/video/' + item._id;
 };
 
 var generateRSS = function (docs) {
