@@ -47,7 +47,7 @@
                                     }
                                 } ();
 
-                            return '/#' + pathPattern + id;
+                            return '/#!' + pathPattern + id;
                         };
                     });
                 }, 0);

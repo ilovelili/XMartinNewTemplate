@@ -94,14 +94,20 @@
                 $translateProvider.useLocalStorage();
             }
         ])
+
+        .config(['$locationProvider', function ($locationProvider) {
+            $locationProvider.html5Mode(false);
+            $locationProvider.hashPrefix('!');
+        }])
+
         // rootscope register
         .run(['$rootScope', '$window', '$location', 'MongoService', 'UseragentService', function ($rootScope, $window, $location, MongoService, UseragentService) {
             $rootScope.back = function () {
                 $window.history.back();
-            };                          
+            };
             $rootScope.resloveHref = function (id) {
-                return '/#/video/' + id;
-            };         
+                return '/#!/video/' + id;
+            };
             $rootScope.isPC = UseragentService.isPC;
 
             $rootScope.$on('$routeChangeSuccess', function (newVal, oldVal) {
