@@ -10,10 +10,6 @@ echo "   collector: mongo dumping starts"
 nodejs ./dumper.js
 echo "   collector: mongo dumping ends"
 
-# rss generate
-echo "   collector: rss generating starts"
-nodejs ./rss.js
-echo "   collector: rss generating ends"
 
 # cron test
 # PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs ./test/testcasper.js
