@@ -23,7 +23,8 @@
 		"POPULARWEEKLY": "週間",
 		"POPULARMONTHLY": "月間",
 		"POPULARFULLTIME": "全期間",
-		"NEWVIDEOS": "新着動画一覧へ"
+		"NEWVIDEOS": "新着動画一覧へ",
+		"RSS": "RSS"
 	},
     "detail": {
         "DURATION": "再生時間",

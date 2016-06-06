@@ -1,4 +1,4 @@
-﻿<!--▼コンテンツ-->
+<!--▼コンテンツ-->
 <div id="head_under" class="gridContainer clearfix page_ranking">
     <!--▼メインセクション-->
     <div class="main_section">
@@ -6,26 +6,22 @@
         <div class="row ranking_switch_week_title">
             <div class="col-lg-12">
                 <div class="page-header">
-                    <h1 id="type" translate="navi.LINK">このサイトについて</h1>
+                    <h1 id="type" translate="navi.RSS">RSS</h1>
                 </div>
             </div>
         </div>
-        <!--▼このサイトについて-->
         <div class="row">
             <div class="col-sm-12">
                 <p class="desc">
                     <ol>
-                        <li><a ng-href="/#!/home" target="_blank">XVIDEOS♀まとめ</a></li>
+                        <li ng-repeat="entry in entries">
+                            <a ng-href="{{entry.link}}" target="_blank">{{entry.title}}</a>
+                            <div class="gridContainer clearfix" ng-bind-html="entry.content"></div>
+                        </li>
                     </ol>
                 </p>
-
-                <div class="gridContainer clearfix">
-                    相互リンクのお申し込みはこちら<br />
-                    mail: <img src="img/mail.png" />
-                </div>
             </div>
         </div>
-        <ad-spot></ad-spot>
     </div>
     <side-menu></side-menu>
     <div class="clear" style="height:50px;"></div>

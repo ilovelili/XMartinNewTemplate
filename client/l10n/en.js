@@ -23,7 +23,8 @@
 		"POPULARWEEKLY": "Weekly",
 		"POPULARMONTHLY": "Monthly",
 		"POPULARFULLTIME": "Whole period",
-		"NEWVIDEOS": "More latest videos"
+		"NEWVIDEOS": "More latest videos",
+		"RSS": "RSS"
 	},
     "detail": {
         "DURATION": "Play time",

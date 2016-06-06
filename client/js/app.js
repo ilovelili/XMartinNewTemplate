@@ -21,6 +21,9 @@
             .when('/link', {
                 templateUrl: 'partial/_link.html'
             })
+            .when('/rss', {
+                templateUrl: 'partial/_rss.html'
+            })
             .when('/keyword/:cat', {
                 templateUrl: 'partial/_keyword.html',
             })
@@ -101,7 +104,7 @@
         }])
 
         // rootscope register
-        .run(['$rootScope', '$window', '$location', 'MongoService', 'UseragentService', function ($rootScope, $window, $location, MongoService, UseragentService) {
+        .run(['$rootScope', '$window', '$location', '$sce', 'MongoService', 'UseragentService', function ($rootScope, $window, $location, $sce, MongoService, UseragentService) {
             $rootScope.back = function () {
                 $window.history.back();
             };
@@ -137,5 +140,26 @@
                         return 0;
                     });
             });
+
+            // rss
+            initialize($rootScope, $sce);
         }]);
 })(window.angular);
+
+function initialize(scope, $sce) {
+    var feed = new google.feeds.Feed("http://ero-hotel.jp/rss.xml");
+    feed.setNumEntries(10);
+    feed.load(function (result) {
+        if (!result.error) {
+            result.feed.entries.map(function (entry) {
+                angular.extend(entry, {
+                    content: $sce.trustAsHtml(entry.content),
+                });
+            });
+
+            scope.entries = result.feed.entries;
+        }
+    });
+
+    return scope;
+}
