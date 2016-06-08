@@ -4,7 +4,7 @@
 	    "POPULAR": "Popular videos",
 		"POPULARWEEK": "Weekly popular videos ({{weeklyVideosCount}})",
 		"POPULARMONTH": "Monthly popular videos ({{monthlyVideosCount}})",
-		"POPULARFULLTIME": "All popular videos ({{fulltimeVideosAmount}})",
+		"POPULARFULLTIME": "All popular videos ({{fulltimeVideosCount}})",
 		"NEWVIDEOS": "Latest videos ({{totalAmount}})",
 		"SIDERECOMMEND": "Recommanded",
 		"KEYWORDLIST": " More keywords",
