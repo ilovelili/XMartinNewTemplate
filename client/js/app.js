@@ -125,10 +125,13 @@
 
             // aggregate is heavy so only run once
             MongoService.aggregateCat().then(function (cats) {
+                var sum = 0;
                 cats.map(function (cat) {
                     angular.extend(cat, {
                         name: cat._id.cat,
                     });
+
+                    sum += cat.count;
                 });
 
                 $rootScope.aggregateCats = cats
@@ -139,6 +142,23 @@
                             return 1;
                         return 0;
                     });
+
+                $rootScope.totalAmount = sum;
+            });
+
+            MongoService.getWeeklyPopularById().then(function (weeklyVideos) {                
+                $rootScope.weeklyVideos = weeklyVideos;
+                $rootScope.weeklyVideosCount = weeklyVideos.length;
+            });
+
+            MongoService.getMonthlyPopularById().then(function (monthlyVideos) {                
+                $rootScope.monthlyVideos = monthlyVideos;
+                $rootScope.monthlyVideosCount = monthlyVideos.length;
+            });
+
+            MongoService.getFulltimePopularById().then(function (fulltimeVideos) {                
+                $rootScope.fulltimeVideos = fulltimeVideos;
+                $rootScope.fulltimeVideosCount = fulltimeVideos.length;
             });
 
             // rss

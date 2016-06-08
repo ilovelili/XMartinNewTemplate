@@ -562,3 +562,8 @@ p.desc { margin:1em 0px; }
   overflow: hidden;
   /**/
 }
+
+.cat_count {
+	font-size: smaller;
+	margin-left: 2%;
+}
