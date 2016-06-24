@@ -39,5 +39,8 @@
     },
 	"desc": {
 		"SEARCH": "Please select the keywords."
+	},
+	"rss": {
+		"feed": "RSS feed"
 	}
 }
