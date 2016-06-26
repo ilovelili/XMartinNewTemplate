@@ -43,11 +43,6 @@ var resolveUrl = function (item) {
     return 'http://ero-hotel.jp/#!/video/' + item._id;
 };
 
-var resloveItemDesciption = function (item) {
-    return '<a href="' + resolveUrl(item) + '">' + '<img width="218.83" height="164.11" src="' + item.thumbnail + '" /></a>' +
-        '<p>' + item.title + '</p>';
-};
-
 var resloveItems = function (items) {
     var result = '';
 
@@ -55,7 +50,7 @@ var resloveItems = function (items) {
         var compiledItem = RDFItemTemplate
             .replace(/{{link}}/g, resolveUrl(item))
             .replace(/{{title}}/g, item.title)
-            .replace(/{{description}}/g, resloveItemDesciption(item));
+            .replace(/{{description}}/g, item.title);
 
         result += compiledItem;
     });
