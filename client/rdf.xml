@@ -1,4 +1,3 @@
-
 <?xml version= "1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/">
     <channel rdf:about="http://ero-hotel.jp/rdf.xml">
@@ -12,13 +11,11 @@
         </items>
         <image rdf:resource="http://ero-hotel.jp/img/title_logo.png" />
     </channel>
-
     <image rdf:about="http://ero-hotel.jp/img/title_logo.png">
         <title>エロホテル</title>
         <link>http://ero-hotel.jp</link>
         <url>http://ero-hotel.jp/img/title_logo.png</url>
     </image>
-
     
     <item rdf:about="http://ero-hotel.jp/#!/video/576f9c074f45d6f41213a400">
         <title>希崎ジェシカ　3Pファック</title>
@@ -79,7 +76,6 @@
         <link>http://ero-hotel.jp/#!/video/576f479c18a7298b0ec7bc93</link>
         <description><a href="http://ero-hotel.jp/#!/video/576f479c18a7298b0ec7bc93"><img width="218.83" height="164.11" src="http://img100-379.xvideos.com/videos/thumbslll/56/fe/bc/56febc004cf9012223e8a4642fdbe7f5/56febc004cf9012223e8a4642fdbe7f5.15.jpg" /></a><p>ロリ可愛い爆乳ナースをナンパしてガチ中出し！</p></description>
     </item>
-    
-    
+        
 </rdf:RDF>    
     

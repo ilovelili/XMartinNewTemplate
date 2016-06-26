@@ -17,8 +17,7 @@ var fs = require('fs'),
         <description>{{description}}</description>
     </item>
     `,
-    RDFTemplate = `
-<?xml version= "1.0" encoding="UTF-8"?>
+    RDFTemplate = `<?xml version= "1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/">
     <channel rdf:about="http://ero-hotel.jp/rdf.xml">
         <title>エロホテル</title>
@@ -82,7 +81,7 @@ var generateRDF = function (docs) {
             .replace(/{{channelitemrepeater}}/g, channelItems)
             .replace(/{{itemrepeater}}/g, items);
 
-    fs.writeFile(path.join(process.cwd(), '../', 'client', 'rss.rdf'), rdf, function (err) {
+    fs.writeFile(path.join(process.cwd(), '../', 'client', 'rdf.xml'), rdf, function (err) {
         if (err) throw err;
     });
 };
