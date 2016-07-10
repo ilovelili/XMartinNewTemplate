@@ -12,7 +12,7 @@
             scope: true,
             link: function (scope) {
                 var searchCriteria = [];
-                scope.catlimit = 100;
+                scope.catlimit = 200;
                 scope.videos = [];
                 scope.checked = false;
                 scope.searchClicked = false;
