@@ -2,14 +2,7 @@
 var xids = [],
     ids = [],
     fs = require('fs'),
-    casper = require('casper').create({
-        verbose: true,
-        logLevel: 'error',
-        pageSettings: {
-            loadImages: false,
-            loadPlugins: false
-        }
-    }),
+    casper = require('casper').create(),
     config = require('config.json')['xvideos'],
     filePath = fs.pathJoin(fs.workingDirectory, 'meta', 'meta.csv');
 
