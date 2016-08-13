@@ -62,9 +62,9 @@ casper.saveToCSV = function() {
 };
 
 //Crawl------------------------
-casper.on("remote.message", function(msg) {
+/*casper.on("remote.message", function(msg) {
     this.echo("remote.msg: " + msg);
-});
+});*/
 
 console.log('sourceUrl is: ' + config.sourceUrl);
 casper.start(config.sourceUrl);
