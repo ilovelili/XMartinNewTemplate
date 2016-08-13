@@ -2,14 +2,7 @@ var links = [],
     infos = [],
     maxLinks = 30,
     fs = require('fs'),
-    casper = require('casper').create({
-        verbose: true,
-        logLevel: 'error',
-        pageSettings: {
-            loadImages: false,
-            loadPlugins: false
-        }
-    }),
+    casper = require('casper').create(),
     options = casper.cli.options,
     destination = options.dest || 'j-xvideos',
     config = require('config.json')[destination],
