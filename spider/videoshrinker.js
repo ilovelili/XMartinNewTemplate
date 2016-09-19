@@ -9,11 +9,9 @@ var MongoClient = require('mongodb').MongoClient,
     filePath = path.join(process.cwd(), 'meta/meta.csv'),
     ObjectId = require('mongodb').ObjectID;
 
-var shrinkVideo = function(db, id, callback) {
-    db.collection('videos').updateOne({ _id: new ObjectId(id) }, {
-            $set: { "enabled": false },
-        },
-        function(err, results) {
+var shrinkVideo = function (db, id, callback) {
+    db.collection('videos').remove({ _id: new ObjectId(id) },
+        function (err, results) {
             if (err) {
                 console.log(err);
             }
@@ -23,8 +21,8 @@ var shrinkVideo = function(db, id, callback) {
         });
 };
 
-var unlinkMeta = function() {
-    fs.unlink(filePath, function(err) {
+var unlinkMeta = function () {
+    fs.unlink(filePath, function (err) {
         if (err) {
             console.error(err);
         } else {
@@ -35,19 +33,37 @@ var unlinkMeta = function() {
 
 function shrinkVideos() {
     'use strict';
+
     var ids = fs.readFileSync(filePath, 'utf8')
         .split(',')
-        .filter(function(item) {
+        .filter(function (item) {
             return item.length > 0
         });
 
-    ids.forEach(function(id) {
-        MongoClient.connect(url, function(err, db) {
-            shrinkVideo(db, id, function() {
-                db.close();
+    MongoClient.connect(url, function (err, db) {
+        try {
+            ids.forEach(function (id) {
+                shrinkVideo(db, id, function () {
+                    // db.close();
+                });
             });
-        });
+
+        } catch (ex) {
+            // do nothing
+        }
     });
+
+    // ids.forEach(function (id) {
+    //     MongoClient.connect(url, function (err, db) {
+    //         try {
+    //             shrinkVideo(db, id, function () {
+    //                 // db.close();
+    //             });
+    //         } catch (ex) {
+    //             // do nothing
+    //         }
+    //     });
+    // });    
 }
 
 // go
