@@ -44,6 +44,6 @@
 		"FEED": "RSS feed"
 	},
 	"link": {
-		"APPLY": "Please contact me for link exchange"
+		"APPLY": "Please contact route666@live.cn for link exchange"
 	}
 }
