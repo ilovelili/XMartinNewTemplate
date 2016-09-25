@@ -1,5 +1,5 @@
 {
-    "title": "無料エロ動画のXVIDEOS♀まとめ",
+    "title": "無料エロ動画のXVIDEOS♀まとめへようこそ",
 	"list": {
 	    "POPULAR": "人気無料XVIDEOSエロ動画",
 		"POPULARWEEK": "週間人気無料XVIDEOSエロ動画 ({{weeklyVideosCount}}件)",

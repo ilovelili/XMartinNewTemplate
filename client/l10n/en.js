@@ -1,5 +1,5 @@
 {
-    "title": "Welcome to ero-hotel.jp",
+    "title": "Welcome to ero-hotel",
 	"list": {
 	    "POPULAR": "Popular videos",
 		"POPULARWEEK": "Weekly popular videos ({{weeklyVideosCount}} videos)",
