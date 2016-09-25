@@ -41,6 +41,9 @@
 		"SEARCH": "Please select the keywords."
 	},
 	"rss": {
-		"feed": "RSS feed"
+		"FEED": "RSS feed"
+	},
+	"link": {
+		"APPLY": "Please contact me for link exchange"
 	}
 }
