@@ -8,7 +8,8 @@ echo "   shrinker: dumper ends"
 
 # extractor
 echo "   extractor: invalid extraction starts"
-PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs ./invalidmetaextractor.js
+# PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs ./invalidmetaextractor.js
+./InvalidExtractor
 echo "   extractor: invalid extraction ends"
 
 #shrinker

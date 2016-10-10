@@ -6,20 +6,9 @@ var MongoClient = require('mongodb').MongoClient,
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
     fs = require('fs'),
     path = require('path'),
-    filePath = path.join(process.cwd(), 'meta/meta.csv'),
+    originMetaPath = path.join(process.cwd(), 'meta/meta.csv'),
+    filePath = path.join(process.cwd(), 'meta/metaextracted.csv'),
     ObjectId = require('mongodb').ObjectID;
-
-var shrinkVideo = function (db, id, callback) {
-    db.collection('videos').remove({ _id: new ObjectId(id) },
-        function (err, results) {
-            if (err) {
-                console.log(err);
-            }
-            if (callback) {
-                callback();
-            }
-        });
-};
 
 var unlinkMeta = function () {
     fs.unlink(filePath, function (err) {
@@ -29,41 +18,40 @@ var unlinkMeta = function () {
             console.log(filePath + ' unlinked');
         }
     });
+
+    fs.unlink(originMetaPath, function (err) {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(originMetaPath + ' unlinked');
+        }
+    });
 };
 
 function shrinkVideos() {
     'use strict';
 
     var ids = fs.readFileSync(filePath, 'utf8')
-        .split(',')
+        .split('\n')
         .filter(function (item) {
             return item.length > 0
+        })
+        .map(function (id) {
+            console.log('id is: ' + id);
+            return new ObjectId(id);
         });
 
-    MongoClient.connect(url, function (err, db) {
-        try {
-            ids.forEach(function (id) {
-                shrinkVideo(db, id, function () {
-                    // db.close();
-                });
+    ids.forEach(function (id) {
+        MongoClient.connect(url, function (err, db) {
+            var collection = db.collection('videos');
+            collection.remove({ _id: id }, function (err, r) {
+                if (err) {
+                    console.error(err);
+                }
+                db.close();
             });
-
-        } catch (ex) {
-            // do nothing
-        }
-    });
-
-    // ids.forEach(function (id) {
-    //     MongoClient.connect(url, function (err, db) {
-    //         try {
-    //             shrinkVideo(db, id, function () {
-    //                 // db.close();
-    //             });
-    //         } catch (ex) {
-    //             // do nothing
-    //         }
-    //     });
-    // });    
+        });
+    }, this);
 }
 
 // go

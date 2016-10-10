@@ -27,7 +27,7 @@ console.log('filepath is ' + filePath);
                         }
 
                         var id = docs[i]._id;
-                        var meta = id + '|' + link.match(pattern)[1] + ',';
+                        var meta = id + '|' + link.match(pattern)[1] + '\n';
                         fs.appendFile(filePath, meta, 'utf8');
                     }
                 }
