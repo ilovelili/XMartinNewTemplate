@@ -18,8 +18,8 @@
         return {
             restrict: 'E',
             replace: true,
-            // template: "<iframe width='300' height='250' marginwidth='0' marginheight='0' hspace='0' vspace='0' frameborder='0' scrolling='no' bordercolor='#000000' src='partial/advertisement/_nend_300x250.html'></iframe>",
-            template: "<iframe src='//adspaces.ero-advertising.com/banads/view.php?spaceid=2147091' frameborder='0' width='300' height='250' scrolling='no'></iframe>",
+            template: "<iframe width='300' height='250' marginwidth='0' marginheight='0' hspace='0' vspace='0' frameborder='0' scrolling='no' bordercolor='#000000' src='partial/advertisement/_maist_300x250.html'></iframe>",
+            // template: "<iframe src='//adspaces.ero-advertising.com/banads/view.php?spaceid=2147091' frameborder='0' width='300' height='250' scrolling='no'></iframe>",
         };
     }
 
@@ -46,8 +46,8 @@
         return {
             restrict: 'E',
             replace: true,
-            template: "<iframe src='//adspaces.ero-advertising.com/banads/view.php?spaceid=2147091' frameborder='0' width='300' height='250' scrolling='no'></iframe>",
-            // template: "<iframe width='300' height='250' marginwidth='0' marginheight='0' hspace='0' vspace='0' frameborder='0' scrolling='no' bordercolor='#000000' src='partial/advertisement/_nend_300x250.html'></iframe>",
+            // template: "<iframe src='//adspaces.ero-advertising.com/banads/view.php?spaceid=2147091' frameborder='0' width='300' height='250' scrolling='no'></iframe>",
+            template: "<iframe width='300' height='250' marginwidth='0' marginheight='0' hspace='0' vspace='0' frameborder='0' scrolling='no' bordercolor='#000000' src='partial/advertisement/_maist_300x250.html'></iframe>",
             link: function (scope, element, attributes) {
                 var seed = $interval(function () {
                     var mov_thumb = $('.mov_thumb');
