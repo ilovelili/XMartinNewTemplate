@@ -32,7 +32,7 @@
 		"RECOMMENDED": "Recommended videos"
     },
     "about": {
-        "INTRO": "ero-hotel.jp is a free porn videos website.<br /> About 50 to 100 adult videos are uploaded each day (note that gay and shemale videos are filtered from this page, but shown in their respective categories).<br /> Our pages contain absolutely no spyware/adware/trojan/etc.<br /> There is no charge (no hidden charges either) for viewing our videos."
+        "INTRO": "ero-hotel.jp is a free porn videos website.<br /> About 50 to 100 adult videos are uploaded each day (note that gay and shemale videos are filtered from this page, but shown in their respective categories).<br /> Our pages contain absolutely no spyware/adware/trojan/etc.<br /> There is no charge (no hidden charges either) for viewing our videos. <br />© ero-hotel.jp All rights reserved."
     },
     "footer": {
         "ABOUT": "ero-hotel.jp is a free porn videos website."
