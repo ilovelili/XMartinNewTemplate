@@ -554,7 +554,9 @@ p.desc { margin:1em 0px; }
 	margin-left: 15px;
 }
 
-
+.left-per-2 {
+	margin-left: 2%;
+}
 
 /*  clearfix  */
 .clearfix:after {
