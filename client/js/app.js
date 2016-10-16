@@ -79,7 +79,6 @@
                 redirectTo: '/home'
             });
     }])
-        // translate config
         .config(['$translateProvider',
             function ($translateProvider) {
                 $translateProvider.useStaticFilesLoader({
@@ -134,29 +133,21 @@
                     sum += cat.count;
                 });
 
-                $rootScope.aggregateCats = cats
-                    .sort(function (cat1, cat2) {
-                        if (cat1.count > cat2.count)
-                            return -1;
-                        if (cat1.count < cat2.count)
-                            return 1;
-                        return 0;
-                    });
-
+                $rootScope.aggregateCats = cats;
                 $rootScope.totalAmount = sum;
             });
 
-            MongoService.getWeeklyPopularById().then(function (weeklyVideos) {                
+            MongoService.getWeeklyPopularById().then(function (weeklyVideos) {
                 $rootScope.weeklyVideos = weeklyVideos;
                 $rootScope.weeklyVideosCount = weeklyVideos.length;
             });
 
-            MongoService.getMonthlyPopularById().then(function (monthlyVideos) {                
+            MongoService.getMonthlyPopularById().then(function (monthlyVideos) {
                 $rootScope.monthlyVideos = monthlyVideos;
                 $rootScope.monthlyVideosCount = monthlyVideos.length;
             });
 
-            MongoService.getFulltimePopularById().then(function (fulltimeVideos) {                
+            MongoService.getFulltimePopularById().then(function (fulltimeVideos) {
                 $rootScope.fulltimeVideos = fulltimeVideos;
                 $rootScope.fulltimeVideosCount = fulltimeVideos.length;
             });
