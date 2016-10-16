@@ -32,7 +32,7 @@
 		"RECOMMENDED": "お勧め動画"
     },
     "about": {
-        "INTRO": "XVIDEOS♀まとめは全て無料で動画を見ることが出来るエロ動画まとめサイトです。"
+        "INTRO": "XVIDEOS♀まとめは全て無料で動画を見ることが出来るエロ動画まとめサイトです。<br />© ero-hotel.jp All rights reserved."
     },
     "footer": {
         "ABOUT": "XVIDEOS♀まとめは全て無料で動画を見ることが出来るエロ動画まとめサイトです。"
