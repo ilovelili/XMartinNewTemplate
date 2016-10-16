@@ -56,7 +56,7 @@ function VideoDetailCtrl($scope, $sce, $window, $timeout, MongoService, DateServ
                     });
 
                     scope.videos = result;
-                    scope.limit = scope.limit || (UseragentService.isPC ? 15 : 14);
+                    scope.limit = scope.limit || /*(UseragentService.isPC ? 15 : 14)*/ 15;
                 });
             });
         }
