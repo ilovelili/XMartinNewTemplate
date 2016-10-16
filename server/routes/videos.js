@@ -114,10 +114,13 @@ exports.aggregateCat = function(req, res) {
                             $sum: 1
                         },
                     },
+                    
+                },
+                {
                     $sort: {
                         count: -1
                     },
-                }, 
+                },
                 {
                     $match: {
                         "_id.enabled": true,
