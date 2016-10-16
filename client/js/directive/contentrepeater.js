@@ -7,50 +7,50 @@
     function ContentRepeaterDirectiveFunc(DateService, UseragentService, $location, $timeout) {
         return {
             restrict: 'E',
-            templateUrl: 'partial/inner/_contentrepeater.html',            
+            templateUrl: 'partial/inner/_contentrepeater.html',
             scope: {
                 query: '&',
                 limit: '=',
                 domain: '@',
             },
             link: function (scope, elements, attributes) {
-                $timeout(function () {
-                    scope.videos = [];
-                    scope.query().then(function (videos) {
-                        videos.map(function (video) {
-                            angular.extend(video, {
-                                date: DateService.formatDate(video.date)
-                            });
-
-                            // stupid hack
-                            if (video.title.length > 24) {
-                                angular.extend(video, {
-                                    title: video.title.substring(0, 24) + '...',
-                                });
-                            }
+                //$timeout(function () {
+                scope.videos = [];
+                scope.query().then(function (videos) {
+                    videos.map(function (video) {
+                        angular.extend(video, {
+                            date: DateService.formatDate(video.date)
                         });
 
-                        scope.videos = videos;
-                        scope.resloveHref = function (id) {                            
-                                var pathPattern = function () {
-                                    switch (scope.domain) {
-                                        case 'newcoming':
-                                            return '/video/';
-                                        case 'weeklypopular':
-                                            return '/weeklypopularvideo/';
-                                        case 'monthlypopular':
-                                            return '/monthlypopularvideo/';
-                                        case 'fulltimepopular':
-                                            return '/fulltimepopularvideo/';
-                                        default:
-                                            return '/video/';
-                                    }
-                                } ();
-
-                            return '/#!' + pathPattern + id;
-                        };
+                        // stupid hack
+                        if (video.title.length > 24) {
+                            angular.extend(video, {
+                                title: video.title.substring(0, 24) + '...',
+                            });
+                        }
                     });
-                }, 0);
+
+                    scope.videos = videos;
+                    scope.resloveHref = function (id) {
+                        var pathPattern = function () {
+                            switch (scope.domain) {
+                                case 'newcoming':
+                                    return '/video/';
+                                case 'weeklypopular':
+                                    return '/weeklypopularvideo/';
+                                case 'monthlypopular':
+                                    return '/monthlypopularvideo/';
+                                case 'fulltimepopular':
+                                    return '/fulltimepopularvideo/';
+                                default:
+                                    return '/video/';
+                            }
+                        } ();
+
+                        return '/#!' + pathPattern + id;
+                    };
+                });
+                // }, 0);
             },
         };
     }
