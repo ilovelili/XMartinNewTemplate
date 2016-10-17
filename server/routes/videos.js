@@ -44,8 +44,9 @@ exports.findByCat = function(req, res) {
                 category: cat,
                 enabled: true,
                 date: { $gte: startDate },
-            }, {
-                sort: [['category', 'asc'],['date','desc']],
+            }).sort({
+                'category': 1,
+                'date': -1,
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
@@ -68,8 +69,8 @@ exports.findByDate = function(req, res) {
             col.find({
                 enabled: true,
                 date: { $gte: date },
-            }, {
-                sort: ['date','desc'],
+            }).sort({
+                'date': -1,
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
@@ -89,8 +90,8 @@ exports.findAll = function(req, res) {
             col.find({
                 enabled: true,
                 date: { $gte: startDate },
-            }, {
-                sort: ['date','desc'],                
+            }).sort({
+                'date': -1,
             }).toArray(function(err, docs) {
                 if (!err) {
                     res.jsonp(docs);
