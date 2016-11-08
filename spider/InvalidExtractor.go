@@ -56,7 +56,7 @@ func main() {
 					invalidObjectChan <- segments[0]
 				}
 			}
-			defer resp.Body.Close()
+			// defer resp.Body.Close()
 		}(scanner.Text())
 	}
 
