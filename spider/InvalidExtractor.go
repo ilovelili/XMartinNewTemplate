@@ -68,7 +68,7 @@ func main() {
 		select {
 		case s := <-invalidObjectChan:
 			invalidObjectIds = append(invalidObjectIds, s)
-		case <-time.After(1 * time.Minute):
+		case <-time.After(10 * time.Minute):
 			writeLines(invalidObjectIds, "./meta/metaextracted.csv")
 			return
 		}
