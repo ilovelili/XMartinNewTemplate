@@ -89,6 +89,7 @@ var unlinkFiles = function() {
 
 dataToBeDumped = readFile();
 
+/*
 MongoClient.connect(url, function(err, db) {
     if (!err) {
         var col = db.collection('videos');
@@ -107,18 +108,18 @@ MongoClient.connect(url, function(err, db) {
             });
     }
 });
+*/
 
 // 20161112 -- bulk insert seems to be wierd
-/*
 dataToBeDumped.forEach(function (data) {
     MongoClient.connect(url, function (err, db) {
         var collection = db.collection('videos');
         collection.insert(data, function (err, r) {
             if (err) {
-                console.error(err);
+                console.error(data.title);
+                // console.error(err);
             }
             db.close();
         });
     });
 }, this);
-*/
