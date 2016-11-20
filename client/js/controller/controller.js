@@ -8,6 +8,10 @@
 
 function VideoDetailCtrl($scope, $sce, $window, $timeout, MongoService, DateService, UseragentService, query) {
     query().then(function (video) {
+        if(!video._id) {
+            $window.open('/', '_self');
+        }
+
         angular.extend(video, {
             date: DateService.formatDate(video.date)
         });

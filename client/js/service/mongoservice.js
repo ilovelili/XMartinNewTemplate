@@ -6,42 +6,62 @@
                 var server = 'http://188.166.244.244:3000';
                 return {
                     getById: function (id) {
-                        if (id) {
-                            return $resource(server + '/videos/:id', { id: id }).get().$promise;
-                        }
-
-                        return $resource(server + '/videos/:id', {}).query().$promise;
+                        try{
+                            if (id) {
+                                return $resource(server + '/videos/:id', { id: id }).get().$promise;
+                            }
+                            return $resource(server + '/videos/:id', {}).query().$promise;    
+                        } catch (ex) {
+                            console.error(ex);
+                        }                        
                     },
                     getByCat: function (cat) {
-                        if (cat) {
-                            return $resource(server + '/videos/cat/:cat', { cat: cat }).query().$promise;
-                        }
+                        try{
+                            if (cat) {
+                                return $resource(server + '/videos/cat/:cat', { cat: cat }).query().$promise;
+                            }
 
-                        return $resource(server + '/videos/cat/:cat', {}).query().$promise;
+                            return $resource(server + '/videos/cat/:cat', {}).query().$promise;
+                        } catch(ex) {
+                            console.error(ex);
+                        }                        
                     },
                     aggregateCat: function () {
-                        return $resource(server + '/aggregateCat/', {}).query().$promise;
+                        try{
+                            return $resource(server + '/aggregateCat/', {}).query().$promise;
+                        } catch (ex) {
+                            console.error(ex);
+                        }                        
                     },
                     getWeeklyPopularById: function (id) {
-                        if (id) {
-                            return $resource(server + '/weeklypopularvideos/:id', { id: id }).get().$promise;
-                        }
-
-                        return $resource(server + '/weeklypopularvideos/:id', {}).query().$promise;
+                        try {
+                            if (id) {
+                                return $resource(server + '/weeklypopularvideos/:id', { id: id }).get().$promise;
+                            }
+                            return $resource(server + '/weeklypopularvideos/:id', {}).query().$promise;
+                        } catch (ex) {
+                            console.error(ex);
+                        }                        
                     },
                     getMonthlyPopularById: function (id) {
-                        if (id) {
-                            return $resource(server + '/monthlypopularvideos/:id', { id: id }).get().$promise;
-                        }
-
-                        return $resource(server + '/monthlypopularvideos/:id', {}).query().$promise;
+                        try { 
+                            if (id) {
+                                return $resource(server + '/monthlypopularvideos/:id', { id: id }).get().$promise;
+                            }
+                            return $resource(server + '/monthlypopularvideos/:id', {}).query().$promise;
+                        } catch (ex) {
+                            console.error(ex);   
+                        }                        
                     },
                     getFulltimePopularById: function (id) {
-                        if (id) {
-                            return $resource(server + '/fulltimepopularvideos/:id', { id: id }).get().$promise;
-                        }
-
-                        return $resource(server + '/fulltimepopularvideos/:id', {}).query().$promise;
+                        try {
+                            if (id) {
+                                return $resource(server + '/fulltimepopularvideos/:id', { id: id }).get().$promise;
+                            }
+                            return $resource(server + '/fulltimepopularvideos/:id', {}).query().$promise;
+                        } catch (ex) {
+                            console.error(ex);
+                        }                        
                     },
                 };
             }
