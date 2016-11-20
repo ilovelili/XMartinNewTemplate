@@ -17,26 +17,22 @@ exports.findById = function(req, res) {
 
     var id = req.params.id;
     console.log('findById: ' + id);
+    if (id.length != 12) return null;
 
-    try {        
-        MongoClient.connect(url, function(err, db) {
-            if (!err) {
-                var col = db.collection('videos');
-                col.findOne({
-                    _id: new ObjectId(id),
-                    enabled: true,
-                }, function(err, doc) {
-                    if (!err) {
-                        res.jsonp(doc);
-                    }
-                    db.close();
-                });
-            }
-        });
-    } catch (ex) {
-        console.log(ex);
-        return null;
-    }    
+    MongoClient.connect(url, function(err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            col.findOne({
+                _id: new ObjectId(id),
+                enabled: true,
+            }, function(err, doc) {
+                if (!err) {
+                    res.jsonp(doc);
+                }
+                db.close();
+            });
+        }
+    });    
 };
 
 exports.findByCat = function(req, res) {
@@ -44,29 +40,24 @@ exports.findByCat = function(req, res) {
     var cat = req.params.cat;
     console.log('findByCat: ' + cat);
 
-    try {
-        MongoClient.connect(url, function(err, db) {
-            if (!err) {
-                var col = db.collection('videos');
-                col.find({
-                    category: cat,
-                    enabled: true,
-                    date: { $gte: startDate },
-                }).sort({
-                    'category': 1,
-                    'date': -1,
-                }).toArray(function(err, docs) {
-                    if (!err) {
-                        res.jsonp(docs);
-                    }
-                    db.close();
-                });
-            }
-        });
-    } catch (ex) {
-        console.log(ex);
-        return null;
-    }    
+    MongoClient.connect(url, function(err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            col.find({
+                category: cat,
+                enabled: true,
+                date: { $gte: startDate },
+            }).sort({
+                'category': 1,
+                'date': -1,
+            }).toArray(function(err, docs) {
+                if (!err) {
+                    res.jsonp(docs);
+                }
+                db.close();
+            });
+        }
+    });    
 };
 
 // todo: check query by date
@@ -75,54 +66,44 @@ exports.findByDate = function(req, res) {
     var date = req.params.date;
     console.log('findByDate: ' + date);
 
-    try {
-        MongoClient.connect(url, function(err, db) {
-            if (!err) {
-                var col = db.collection('videos');
-                col.find({
-                    enabled: true,
-                    date: { $gte: date },
-                }).sort({
-                    'date': -1,
-                }).toArray(function(err, docs) {
-                    if (!err) {
-                        res.jsonp(docs);
-                    }
-                    db.close();
-                });
-            }
-        });
-    } catch (ex) {
-        console.log(ex);
-        return null;
-    }    
+    MongoClient.connect(url, function(err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            col.find({
+                enabled: true,
+                date: { $gte: date },
+            }).sort({
+                'date': -1,
+            }).toArray(function(err, docs) {
+                if (!err) {
+                    res.jsonp(docs);
+                }
+                db.close();
+            });
+        }
+    });    
 };
 
 exports.findAll = function(req, res) {
     'use strict';
 
-    try {
-        MongoClient.connect(url, function(err, db) {
-            if (!err) {
-                var col = db.collection('videos');
-                // find created in one year
-                col.find({
-                    enabled: true,
-                    date: { $gte: startDate },
-                }).sort({
-                    'date': -1,
-                }).toArray(function(err, docs) {
-                    if (!err) {
-                        res.jsonp(docs);
-                    }
-                    db.close();
-                });
-            }
-        });
-    } catch (ex) {
-        console.log(ex);
-        return null;
-    }    
+    MongoClient.connect(url, function(err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            // find created in one year
+            col.find({
+                enabled: true,
+                date: { $gte: startDate },
+            }).sort({
+                'date': -1,
+            }).toArray(function(err, docs) {
+                if (!err) {
+                    res.jsonp(docs);
+                }
+                db.close();
+            });
+        }
+    });    
 };
 
 // aggregate by category
@@ -130,44 +111,39 @@ exports.aggregateCat = function(req, res) {
     'use strict';
     console.log('aggregateCat');
 
-    try {
-        MongoClient.connect(url, function(err, db) {
-            if (!err) {
-                var col = db.collection('videos');
-                col.aggregate([
-                    { $unwind: "$category" }, 
-                    {
-                        $group: {
-                            _id: {
-                                cat: "$category",
-                                enabled: "$enabled",
-                            },
-                            count: {
-                                $sum: 1
-                            },
+    MongoClient.connect(url, function(err, db) {
+        if (!err) {
+            var col = db.collection('videos');
+            col.aggregate([
+                { $unwind: "$category" }, 
+                {
+                    $group: {
+                        _id: {
+                            cat: "$category",
+                            enabled: "$enabled",
                         },
-                        
-                    },
-                    {
-                        $sort: {
-                            count: -1
+                        count: {
+                            $sum: 1
                         },
                     },
-                    {
-                        $match: {
-                            "_id.enabled": true,
-                        }
+                    
+                },
+                {
+                    $sort: {
+                        count: -1
+                    },
+                },
+                {
+                    $match: {
+                        "_id.enabled": true,
                     }
-                ]).toArray(function(err, docs) {
-                    if (!err) {
-                        res.jsonp(docs);
-                    }
-                    db.close();
-                });
-            }
-        });
-    } catch (ex) {
-        console.log(ex);
-        return null;
-    }    
+                }
+            ]).toArray(function(err, docs) {
+                if (!err) {
+                    res.jsonp(docs);
+                }
+                db.close();
+            });
+        }
+    });    
 };

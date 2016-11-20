@@ -16,6 +16,8 @@ exports.findById = function(req, res) {
     'use strict';
     var id = req.params.id;
     console.log('findById: ' + id);
+    if (id.length != 12) return null;
+
     MongoClient.connect(url, function(err, db) {
         if (!err) {
             var col = db.collection('fulltimePopularVideos');
