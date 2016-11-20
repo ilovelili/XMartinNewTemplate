@@ -18,7 +18,7 @@
 		"RANKING": "ランキング",
 		"KEYWORD": "キーワード",		
 		"ABOUT": "このサイトについて",
-		"LINK": "相互リンク",
+		"LINK": "もっと見る!",
 		"POPULAR": "人気動画",
 		"POPULARWEEKLY": "週間",
 		"POPULARMONTHLY": "月間",
