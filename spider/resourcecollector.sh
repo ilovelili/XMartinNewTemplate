@@ -2,7 +2,8 @@
 
 # get resource
 echo "   collector: scraping starts"
-PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs ./spider.js
+# casperjs --web-security=no --ssl-protocol=any --ignore-ssl-errors=yes spider.js
+PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs --web-security=no --ssl-protocol=any --ignore-ssl-errors=yes ./spider.js
 echo "   collector: scraping ends"
 
 # dump into mongo
