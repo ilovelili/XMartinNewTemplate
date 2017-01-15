@@ -13,3 +13,7 @@ db.monthlyPopularVideos.createIndex({"click":-1}, {unique:false});
 db.fulltimePopularVideos.createIndex({"title":1}, {unique:true,dropDups:true});
 db.fulltimePopularVideos.createIndex({"date":-1}, {unique:false});
 db.fulltimePopularVideos.createIndex({"click":-1}, {unique:false});
+
+
+use admin
+db.createUser({ user:"admin", pwd: "A7059970599", roles: [{role: "root", db: "admin"}] })
