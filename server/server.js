@@ -4,7 +4,7 @@ var express = require('express'),
     weeklypopularvideos = require('./routes/weeklypopularvideos'),
     monthlypopularvideos = require('./routes/monthlypopularvideos'),
     fulltimepopularvideos = require('./routes/fulltimepopularvideos'),
-    host = process.env.HOST || '188.166.244.244',    
+    host = process.env.HOST || '127.0.0.1',    
     port = process.env.PORT || 3000;
 
 var app = express();
