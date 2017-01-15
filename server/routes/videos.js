@@ -5,7 +5,7 @@ var MongoClient = require('mongodb').MongoClient,
     host = process.env.MongoHost || '188.166.244.244',
     port = process.env.MongoPort || 27017,
     db = 'ero',
-    url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
+    url = 'mongodb://admin:A7059970599@{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
     ObjectId = require('mongodb').ObjectID,
     startDate = new Date();
 
