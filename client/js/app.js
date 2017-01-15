@@ -153,7 +153,7 @@
             });
 
             // rss
-            initialize($rootScope, $sce);
+            // initialize($rootScope, $sce);
         }]);
 })(window.angular);
 
