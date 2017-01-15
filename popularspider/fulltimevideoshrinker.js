@@ -1,6 +1,6 @@
 // get all xids from mongo db
 var MongoClient = require('mongodb').MongoClient,
-    host = process.env.HOST || '127.0.0.1',
+    host = process.env.HOST || '188.166.244.244',
     port = process.env.PORT || 27017,
     db = 'ero',
     url = 'mongodb://{{host}}:{{port}}/{{db}}'.replace('{{host}}', host).replace('{{port}}', port).replace('{{db}}', db),
