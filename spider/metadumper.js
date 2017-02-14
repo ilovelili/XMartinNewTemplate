@@ -12,7 +12,7 @@ console.log('filepath is ' + filePath);
 
 (function dumpXidsToCSV() {
     'use strict';
-    var pattern = /http:\/\/flashservice.xvideos.com\/embedframe\/(\d+)/;
+    var pattern = /(http|https):\/\/flashservice.xvideos.com\/embedframe\/(\d+)/;
     MongoClient.connect(url, function(err, db) {
         if (!err) {
             var col = db.collection('videos');
@@ -27,7 +27,7 @@ console.log('filepath is ' + filePath);
                         }
 
                         var id = docs[i]._id;
-                        var meta = id + '|' + link.match(pattern)[1] + '\n';
+                        var meta = id + '|' + link.match(pattern)[2] + '\n';
                         fs.appendFile(filePath, meta, 'utf8');
                     }
                 }
