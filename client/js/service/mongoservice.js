@@ -3,7 +3,7 @@
     angular.module('eroMartin.mongoService', ['ngResource'])
         .factory('MongoService', ['$resource',
             function ($resource) {
-                var server = 'http://188.166.244.244:3000';
+                var server = 'http://178.128.111.159:3000';
                 return {
                     getById: function (id) {
                         try{
