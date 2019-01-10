@@ -86,10 +86,13 @@ casper.then(function() {
 
         this.thenOpen(response.data.link, function writeToCSV() {
             var embed = this.evaluate(function() {
-                return __utils__.findOne('.iframe iframe').getAttribute('src');
+                return __utils__.findOne('#vlink').getAttribute('href');
             });
 
-            console.log('embed: ' + embed);
+            // then replace it with iframe link
+            // https://www.xvideos.com/video38685941
+            // https://www.xvideos.com/embedframe/38685941
+            embed = embed.replace('/video', '/embedframe/');
             infos.push(embed);
         });
     });
