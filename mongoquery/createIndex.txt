@@ -1,6 +1,6 @@
-db.ero.createIndex({"title":1}, {unique:true,dropDups:true});
-db.ero.createIndex({"date":-1}, {unique:false});
-db.ero.createIndex({"click":-1}, {unique:false});
+db.videos.createIndex({"title":1}, {unique:true,dropDups:true});
+db.videos.createIndex({"date":-1}, {unique:false});
+db.videos.createIndex({"click":-1}, {unique:false});
 
 db.weeklyPopularVideos.createIndex({"title":1}, {unique:true,dropDups:true});
 db.weeklyPopularVideos.createIndex({"date":-1}, {unique:false});
